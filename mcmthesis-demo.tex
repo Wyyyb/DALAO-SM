@@ -83,7 +83,9 @@ In the following chapters, we will demonstrate and illustrate our model in detai
 \end{itemize}
 
 \section{A common model for most countries}
-In this section, we draw a relationship schema of several vital factors to show the direct influences between them. Take economic policy as an example, it has a strong direct effect on GDP under most circumstances. And in the schema, we can also see the indirect influence since all the boxes are connected by arrow lines. After that, an evaluation function can be determined by weighting the factors’ contribution to fragility. Even more, we can also gain a recursion function to predict the country's fragility in a few years. Using these functions to evaluate current status of some typical countries, an evaluation standard then be settled.
+In this section, we draw a relationship schema of several vital factors to show the direct influences between them. Take economic policy as an example, it has a strong direct effect on GDP under most circumstances. And in the schema, we can also see the indirect influence since all the boxes are connected by arrow lines.
+
+ After that, an evaluation function can be determined by weighting the factors’ contribution to fragility. Even more, we can also gain a recursion function to predict the country's fragility in a few years. Using these functions to evaluate current status of some typical countries, an evaluation standard then be settled.
 
 \subsection{Model establishing without climate change}
 Based on the schema, we focus on several factors that might have the most impact on a country's fragility. Policies issued by government, military activities, social problems and economic crisis are four major factors effecting fragility. These factors also have interconnections, which makes this model more realistic and manageable.
@@ -91,7 +93,7 @@ Based on the schema, we focus on several factors that might have the most impact
 \begin{figure}[h]
 	\small
 	\centering
-	\includegraphics[width=15cm]{figure2.png}
+	\includegraphics[width=14cm]{figure2.png}
 	\caption{Stage-structured model of current process} \label{fig:Stage-structured model of current process}
 \end{figure}
 
@@ -153,6 +155,7 @@ P_N \\ M_N \\ E_N \\ S_N
 \end{matrix}
 \right) 
 $$
+Specifically, $P$ is the negative effect of improper policy issued by the government, $M$ is the decrease of security apparatus, $E$ is economic declining, and $S$ is social unrest.
 
 \subsection{Modified Markov Model including climate change}
 
@@ -161,7 +164,7 @@ We can find in the schema that climate change has direct influence on policy fac
 $$
 \left(
 \begin{matrix}
-	P_{N+1} \\ M_{N+1} \\ E_{N+1} \\ S_{N+1}
+P_{N+1} \\ M_{N+1} \\ E_{N+1} \\ S_{N+1}
 \end{matrix}
 \right) 
 = 
@@ -181,7 +184,7 @@ P_N \\ M_N \\ E_N \\ S_N
 +
 \left(
 \begin{matrix}
-k_C_P \\ {0} \\ k_C_E \\ k_C_S
+k_{CP} \\ {0} \\ k_{CE} \\ k_{CS}
 \end{matrix}
 \right) 
 C
@@ -190,7 +193,46 @@ $$
 There may be doubts whether military factor will be affected. As a matter of fact, military factor will change, but not on the direct effect of climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
 
 
+\subsection{!}
 
+\begin{table}[htbp]
+	\renewcommand\arraystretch{1.5}
+	\footnotesize
+	\centering
+	\begin{tabular}{m{3.8cm}<{\centering}|m{4.8cm}<{\centering}|m{4.8cm}<{\centering}}
+		\whline
+		\textbf{Hypothesis}&\textbf{$P_N$}&\textbf{$M_N$}\\
+		\whline
+		\textbf{Abnormal precipitation}& 2 support, 1 none, 1 opposite &1 support, 2 none, 1 opposite\\
+		
+		\textbf{Abnormal temperature}&1 support, 2 none, 1 opposite&1 support, 1 none, 1 opposite\\
+		
+		\textbf{Natural disasters}&2 support, 1 opposite&1 none\\
+		
+		\textbf{Sea level rising}&2 support, 1 none, 1 opposite&1 support, 1 none, 1 opposite\\
+		
+		\textbf{Energy deficiency}&2 support, 1 opposite&3 none\\
+		
+		\textbf{Less vegetation}&2 none&1 none\\
+		
+		\shline
+		\textbf{Hypothesis}&\textbf{$E_N$}&\textbf{$S_N$}\\
+		\whline
+		\textbf{Abnormal precipitation}& 3 support, 1 some support &2 support, 1 opposite\\
+		
+		\textbf{Abnormal temperature}&4 support, 1 none, 2 opposite&2 support, 1 none, 1 opposite\\
+		
+		\textbf{Natural disasters}&6 support, 1 opposite&6 support, 2 opposite\\
+		
+		\textbf{Sea level rising}&3 support, 1 none, 1 opposite&2 none\\
+		
+		\textbf{Energy deficiency}&2 support, 1 opposite&2 support, 1 none, 1 opposite\\
+		
+		\textbf{Less vegetation}&3 support, 1 none, 1 opposite&2 support, 1 opposite\\
+		\shline
+	\end{tabular}
+	\caption{Influence of climate change}\label{tab:Influence of climate change}
+\end{table}
 
 \begin{table}[htbp]
 	\renewcommand\arraystretch{1.5}
@@ -247,7 +289,7 @@ $$F(t)=1-e^{-\mu_At}$$
 \item The time it takes to pass Zone B per person is subject to exponential distribution as well
 $$F(t)=1-e^{-\mu_Bt}$$
 \end{itemize}
-\subsection{Estimation for some parameters}
+
 Based on data we have received, we can attain the estimated value for $\lambda_P$, $\lambda_R$, $\mu_A$, and $\mu_B$ ( See details about the data in \textbf{Appendix A}). We use Successive Minus to calculate the average value. For the number of the arriving passengers per second, the average time interval $\overline{\Delta t_P}$ between every 29 persons at the Pre-Checkpoint is 286.6s. Therefore, due to Moment Estimation, $\lambda_P$ is given by
 $$\widehat{\lambda_P}=\frac{\overline{n_{Pi}}}{\overline{\Delta t_P}}=0.1012s^{-1}$$
 By similar method, we can obtain the estimated values for $\lambda_R$ as well ( $\overline{\Delta t_R}$ is the average time interval between every 23 persons at the regular checkpoint )

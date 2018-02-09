@@ -85,7 +85,7 @@ In the following chapters, we will demonstrate and illustrate our model in detai
 \section{A model for current process}
 In this section, we draw a relationship schema of several vital factors to show the direct influences between them. Take economic policy as an example, it has a strong direct effect on GDP under most circumstances. And in the schema, we can also see the indirect influence since all the boxes are connected by arrow lines. After that, an evaluation function can be determined by weighting the factors’ contribution to fragility. Even more, we can also gain a recursion function to predict the country’s fragility in a few years. Using these functions to evaluate current status of some typical countries, an evaluation standard then be settled.
 \subsection{Model establishing}
-Based on the schema, we focus on several factors that might have the most impact on a country’s fragility. Policies issued by government, military activities, social problems and economic crisis are four major factors effecting fragility. These factors also have interconnections, which makes this model more realistic and manageable.
+Based on the schema, we focus on several factors that might have the most impact on a country's fragility. Policies issued by government, military activities, social problems and economic crisis are four major factors effecting fragility. These factors also have interconnections, which makes this model more realistic and manageable.
 
 \begin{figure}[h]
 	\small
@@ -152,6 +152,45 @@ P_N \\ M_N \\ E_N \\ S_N
 \end{matrix}
 \right) 
 $$
+
+\begin{table}[htbp]
+	\renewcommand\arraystretch{1.5}
+	\footnotesize
+	\centering
+	\begin{tabular}{m{2.7cm}<{\centering}|m{5cm}<{\centering}|m{5cm}<{\centering}}
+		\whline
+		\textbf{Hypothesis}&\textbf{$P_N$}&\textbf{$M_N$}\\
+		\whline
+		\textbf{Short-term insufficient or excessive precipitation}& 2 support, 1 none, 1 opposite &1 support, 2 none, 1 opposite\\
+		
+		\textbf{Short-term temperature increase or decrease}&1 support, 2 none, 1 opposite&1 support, 1 none, 1 opposite\\
+		
+		\textbf{Natural disasters}&2 support, 1 opposite&1 none\\
+		
+		\textbf{Sea level rising}&2 support, 1 none, 1 opposite&1 support, 1 none, 1 opposite\\
+		
+		\textbf{Energy deficiency}&2 support, 1 opposite&3 none\\
+		
+		\textbf{Less vegetation}&2 none&1 none\\
+		
+		\shline
+		\textbf{Hypothesis}&\textbf{$E_N$}&\textbf{$S_N$}\\
+		\whline
+		\textbf{Short-term insufficient or excessive precipitation}& 3 support, 1 some support &2 support, 1 opposite\\
+
+		\textbf{Short-term temperature increase or decrease}&4 support, 1 none, 2 opposite&2 support, 1 none, 1 opposite\\
+
+		\textbf{Natural disasters}&6 support, 1 opposite&6 support, 2 opposite\\
+
+		\textbf{Sea level rising}&3 support, 1 none, 1 opposite&2 none\\
+
+		\textbf{Energy deficiency}&2 support, 1 opposite&2 support, 1 none, 1 opposite\\
+
+		\textbf{Less vegetation}&3 support, 1 none, 1 opposite&2 support, 1 opposite\\
+		\shline
+	\end{tabular}
+	\caption{Influence of climate change}\label{tab:Influence of climate change}
+\end{table}
 
 \begin{table}[htbp]
 	\renewcommand\arraystretch{1.5}

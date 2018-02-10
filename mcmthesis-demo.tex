@@ -136,7 +136,7 @@
 	To evaluate the fragility of a country, we define the evaluation function $F$
 	
 	\begin{equation}
-	F = w 
+	F_N = w 
 	\left(
 	\begin{matrix}
 	P_N \\ M_N \\ E_N \\ S_N
@@ -498,7 +498,7 @@
 	\subsection{Refine model with more specific climate change}
 	In this chapter, we choose countries with high stability for data analysis, since such countries have dramatic difference with countries involved in the previous discussion. Furthermore, the choice of country will affect our choice of climate parameters. For example, if we choose landlocked countries, the impact of sea-level rise should not be a major factor.
 	
-	Select a specific N as iteration time. Assume each climate factor is $C_i$, the corresponding weight is $k_{c_i}$.  We iterate under the constraint condition that the fragility of a state does not increase. Therefore, we have the following equation
+	Select a specific N as iteration time. Assume each climate factor is $C_i$, and the corresponding weight is $k_{c_i}$.  We iterate under the constraint condition that the fragility of a state does not increase ($F_0 = F_N$). Therefore, we have the following equation
 	
 	$$
 	\Sigma k_{c_i} C_i \leq const

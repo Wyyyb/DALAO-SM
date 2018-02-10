@@ -15,10 +15,10 @@ for i=1:year
     factors=K*factors;    
 end    
 p1=plot(X, Y1, 'r');
-axis([1 year 32 34]);
+axis([1 year 32.5 33.5]);
 
 xlabel('year');
 ylabel('fragility');
 legend('without climate change influence');
-grid();
+%grid();
 

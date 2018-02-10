@@ -144,7 +144,7 @@
 	\right)
 	\end{equation}
 	
-	In the function, $w$ is the weight of the variables, which is $(w_1, w_2, w_3, w_4)$. Since in the subsequent paragraphs we will normalize $P_N, M_N, E_N, S_N$, and for conciseness of the formula, we could assume w to be 1 for each variable.
+	In the function, $w$ is the weight of the variables, which is $(w_1, w_2, w_3, w_4)$. Since in the subsequent paragraphs we will normalize $P_N, M_N, E_N, S_N$, and for conciseness of the formula, we could assign w to be 1 for each variable.
 	
 	As assumed, if climate and external intervention remains zero, our major factors should be a \textbf{Markov Model}, which is
 	
@@ -222,7 +222,7 @@
 	
 	Events related to climate may cause a huge influence on the society, since they will impact the provisionment, conditions of countries and communities, and acquisition of clean water and energy. For example, according to a report from the Climate Action Network of Australia, climate change may decrease the precipitation of prairies, which may lead to a $15\%$ decline in grass productivity. In turn, it could further result in a $12\%$ drop in average weight of cattle, which decreases the beef supply. Under such condition, milk yield of cattle will decline by $30\%$, and new pests will spread in the areas. Furthermore, such condition will cause a $10\%$ decline of drinking water. According to the model of upcoming changing conditions, in the next 15 - 30 years, such situation may happen in a number of grain production bases around the world, which will result in an enormous impact on the economy and society to a large extent. 
 	
-	In addition, A long line of research links hot temperatures to individual aggression, including violent crime and riots. The simple scarcity (or neo-Malthusian) model of conflict assumes that if climate change results in a reduction in essential resources for livelihood, such as food or water, those affected by the increasing scarcity may start fighting over the remaining resources. Alternatively, people may be forced to leave the area and create new scarcities when they encroach on the territory of other people who may also be resource-constrained. Barnett and Adger (2007) review a broad range of studies of both of these effects, focusing particularly on countries where a large majority of the population is still dependent on employment in the primary sector. If climate change results in reduced rainfall and higher temperature that jointly causes droughts, and reduced access to the natural capital that sustains livelihoods, poverty will be more widespread and the potential for conflict greater.[2]
+	In addition, A long line of research links hot temperatures to individual aggression, including violent crime and riots. The simple scarcity (neo-Malthusian) model of conflict assumes that if climate change results in a reduction in essential resources for livelihood, such as food or water, those affected by the increasing scarcity may start fighting over the remaining resources. Alternatively, people may be forced to leave the area and create new scarcities when they encroach on the territory of other people who may also be resource-constrained. Barnett and Adger (2007) review a broad range of studies of both of these effects, focusing particularly on countries where a large majority of the population is still dependent on employment in the primary sector. If climate change results in reduced rainfall and higher temperature that jointly causes droughts, and reduced access to the natural capital that sustains livelihoods, poverty will be more widespread and the potential for conflict greater.[2]
 	
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
@@ -343,54 +343,65 @@
 		\right) 
 		C
 		\end{equation}
+	\end{spacing}	
+	
+	\subsection{Obtain fragility standard}
+	It makes no sense to draw up standards out of an imaginary country, so we choose to investigate several countries which are widely accepted as stable, vulnerable and fragile.
+	We respectively define Egypt, China and Italy to be fragile, vulnerable and stable, then we do research in Fragile States Index database(see the appendix) to calculate the policy factor, military factor, economy factor and social factor. Our factors are gained by 
+	\begin{spacing}{1.5}
+		\begin{equation}
+		\begin{aligned}
+		P&=\frac{1}{2}PS+\frac{1}{2}HR\\
+		M&=SA\\
+		E&=\frac{1}{3}EC+\frac{1}{3}UD+\frac{1}{3}HF\\
+		S&=\frac{1}{2}DP+\frac{1}{2}RI\\
+		\end{aligned}
+		\end{equation}
 	\end{spacing}
+	
+	The results are as follows
 	
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
 		\footnotesize
 		\centering
-		\begin{tabular}{m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}}
+		\begin{tabular}{m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}}
 			\whline
-			&\textbf{$P$}&\textbf{$M$}&\textbf{$E$}&\textbf{$S$}&\textbf{$F$}\\
+			&\textbf{$P$}&\textbf{$M$}&\textbf{$E$}&\textbf{$S$}\\
 			\whline
-			\textbf{Italy}& 2.35 & 4.5 & 3.43 & 4.9 & 15.1833\\
+			\textbf{Italy}& 2.35 & 4.5 & 3.43 & 4.9\\
 			
-			\textbf{China}& 7.1 & 5.9 & 5.53 & 5.8 & 24.33\\
+			\textbf{China}& 7.1 & 5.9 & 5.53 & 5.8\\
 			
-			\textbf{Egypt}& 7.35 & 8.1 & 6.3 & 7.2 & 28.95\\
+			\textbf{Egypt}& 7.35 & 8.1 & 6.3 & 7.2\\
 			
 			\shline
 		\end{tabular}
-		\caption{Fragility and factors of Italy, China, and Egypt}\label{tab:Fragility and factors of Italy, China, and Egypt}
+		\caption{Factors of Italy, China, and Egypt}\label{tab:Factors of Italy, China, and Egypt}
+	\end{table}
+	After getting these data, we use the evaluation function $(1)$ to obtain their fragility.
+	
+	\begin{table}[htbp]
+		\renewcommand\arraystretch{1.5}
+		\footnotesize
+		\centering
+		\begin{tabular}{m{2cm}<{\centering}|m{5cm}<{\centering}}
+			\whline
+			&\textbf{$F$}\\
+			\whline
+			\textbf{Italy} & 15.1833\\
+			
+			\textbf{China} & 24.33\\
+			
+			\textbf{Egypt} & 28.95\\
+			
+			\shline
+		\end{tabular}
+		\caption{Fragility of Italy, China, and Egypt}\label{tab:Fragility  of Italy, China, and Egypt}
 	\end{table}
 	
+	So we can now define stable as fragility below 15.18, vulnerable as fragility above 24.33 and fragile as fragility above 28.95.
 	
-	\subsection{Current process analysis}
-	As the additional screening is not always happening, we can assume the proportion of this unexpected case to be a certain small constant $\eta$. Since $\eta$ is small, every passenger who gets additional searching will not wait in Zone D, as a result, the change of flow can be approximatively ignored. If given the maximum of passenger flow $f_{max}$, the function to describe exit passengers' number is
-	\begin{equation}
-	f_{o}=
-	\begin{cases}
-	f_{max}, &\mbox{$f_i \geq f_{max}$}\\
-	f_i, &\mbox{$f_i < f_{max}$}
-	\end{cases}
-	\end{equation}
-	Assume that $t_{Pk}, t_{Rk}, t_{Lk}$ are time through the Pre-Check entrance, regular-check entrance and screening lanes for the kth sample, so we can easily find that 
-	$$f_{max}=min\{\sum_{k=1}^{N_P}\frac{1}{t_{Pk}}+\sum_{k=1}^{N_R}\frac{1}{t_{Rk}},\sum_{k=1}^{N_L}\frac{1}{t_{Lk}}\}$$
-	We use the estimated values to calculate the numerical solution, since the situation when $f_i<f_{max}$ is quite simple, we only aim to find the max flow for current process, which is the index of the bottleneck.
-	
-	The simplified function is
-	$$f_{o max}= min\{\sum_{k=1}^{N_P}\mu_{Pk}+\sum_{k=1}^{N_R}\mu_{Rk},\sum_{k=1}^{N_L}\mu_{Bk}\}$$
-	As given, $3N_P=N_R$. And the Pre-Check is not faster than regular check at the ID-Checkpoint, so $U_P=U_R=U_A$.
-	$$f_{o max}= min\{4N_P\mu_A,N_L\mu_B\}$$
-	\textbf{Figure 5} shows the relationship between $N_L/N_P$ and $f_{omax}$
-	
-	\begin{figure}[H]
-		\small
-		\centering
-		\includegraphics[width=8.5cm]{figure5.png}
-		\caption{$f_{omax}-N_L/N_P$} \label{fig:$f_{omax}-N_L/N_P$}
-	\end{figure}
-	\noindent When $4N_P\mu_A=N_L\mu_B$, which is $N_L\approx10N_P$, $f_{omax}$ reaches its peak. However, if $N_L$ gets larger, there will be unused screening lanes, which lower the efficiency of the whole security system.
 	\subsection{Assessment and conclusion}
 	This model is only an estimation of the current operating system at one certain airport, and it has some limitations. First of all, we use moment estimators of passenger flow and passing time to calculate relevant parameters, which suits well mostly under the circumstance that sampling time is long enough and that people' s  arriving possibility is equal all the time. If not, the accuracy of the result can not be completely gauaranteed. Secondly, we did not consider the differences among people. For example, the elder are more likely to act slowlier than youngsters, and we wonder if this difference would cause changes in some parameters. Finally, we did not consider the time saved for those who have bought Pre-Check service, as we did not attain the relevant data. However, it is undeniably an important factor when calculating the passing time of screening.
 	

@@ -7,7 +7,7 @@ factors1=[9.85; 9; 8.87; 9.5]; %Central African Republic
 factors=factors1;
 K=[1/2 0 1/3 1/6; 0 2/3 1/6 1/6; 1/2 0 3/8 1/8; 1/4 1/4 1/4 1/4];
 KC=[1/8; 0; 1/2; 1/4];
-C=0.5;
+C=0.2;
 year=5;
 X=zeros(year);
 Y1=zeros(year);
@@ -38,7 +38,7 @@ for i=1:year
     factors=K*factors+KC*C;    
 end    
 p3=plot(X, Y3, 'b');
-axis([1 year 37 41]);
+axis([1 year 37 39]);
 hold off
 xlabel('year');
 ylabel('fragility');

@@ -354,10 +354,10 @@
 	\begin{spacing}{1.5}
 		\begin{equation}
 		\begin{aligned}
-		P&=\frac{1}{2}PS+\frac{1}{2}HR\\
-		M&=SA\\
-		E&=\frac{1}{3}EC+\frac{1}{3}UD+\frac{1}{3}HF\\
-		S&=\frac{1}{2}DP+\frac{1}{2}RI\\
+		&P=\frac{1}{2}PS+\frac{1}{2}HR\\
+		&M=SA\\
+		&E=\frac{1}{3}EC+\frac{1}{3}UD+\frac{1}{3}HF\\
+		&S=\frac{1}{2}DP+\frac{1}{2}RI\\
 		\end{aligned}
 		\end{equation}
 	\end{spacing}
@@ -380,7 +380,7 @@
 			
 			\shline
 		\end{tabular}
-		\caption{Factors of Italy, China, and Egypt}\label{tab:Factors of Italy, China, and Egypt}
+		\caption{Factors of Italy, China and Egypt}\label{tab:Factors of Italy, China and Egypt}
 	\end{table}
 	After getting these data, we use the evaluation function $(1)$ to obtain their fragility. (\textbf{Table 6})
 	
@@ -400,7 +400,7 @@
 			
 			\shline
 		\end{tabular}
-		\caption{Fragility of Italy, China, and Egypt}\label{tab:Fragility  of Italy, China, and Egypt}
+		\caption{Fragility of Italy, China and Egypt}\label{tab:Fragility  of Italy, China and Egypt}
 	\end{table}
 	
 	So we can now define stable as fragility below 15.18, vulnerable as fragility above 24.33 and fragile as fragility above 28.95.
@@ -413,27 +413,86 @@
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=15cm]{figure3.jpg}
-		\caption{Fragility-Year with random climate change} \label{fig:Fragility-Year with random climate change}
+		\includegraphics[width=14cm]{figure3.jpg}
+		\caption{Fragility-Year Graph with random climate change} \label{fig:Fragility-Year with random climate change}
 	\end{figure}
 
 	In \textbf{Figure 3}, the implication of each line is same as what is illustrated above. It is clear that climate change increases fragility of the country. It will cause such consequence through direct impact and indirect means, which accords with the discussion in the previous chapters.
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=15cm]{figure4.jpg}
-		\caption{Fragility-Year with negative climate change} \label{fig:Fragility-Year with negative climate change}
+		\includegraphics[width=13cm]{figure4.jpg}
+		\caption{Fragility-Year Graph with negative climate change} \label{fig:Fragility-Year with random climate change}
 	\end{figure}
 	
 	\section{Run model on the most fragile country}
 	\subsection{How climate change increase fragility}
-In the section above, we have already build up our evaluation model of fragility. To test this model on some extreme situation, we first select one of the most fragile country: Haiti, which is on the edge of crashing.
+	In the section above, we have already build up our evaluation model of fragility. To test this model on some extreme situation, we first select one of the most fragile country: Central African Republic, which is on the edge of crashing. Its basic information are shown in \textbf{Table 7}
 
-biaoge
+	\begin{table}[htbp]
+		\renewcommand\arraystretch{1.5}
+		\footnotesize
+		\centering
+		\begin{tabular}{m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}}
+			\whline
+			\textbf{C1: Security Apparatus}&\textbf{C2: Factionalized Elites}&\textbf{C3: Group Grievance}&\textbf{E1: Economy}&\textbf{E2: Economic Inequality} \\
+			\whline
+			9.0 & 9.7 & 9.1 & 9.1 & 10.0\\
+			\whline
+			\textbf{E3: Human Flight and Brain Drain}&\textbf{P1: State Legitimacy}&\textbf{P2: Public Services}&\textbf{P3: Human Rights}&\textbf{S1: Demographic Pressures} \\
+			\whline
+			7.5 & 9.7 & 10.0 & 9.7 & 9.0\\
+			\whline
+			\textbf{S2: Refugees and IDPs}&\textbf{X1: External Intervention}&\textbf{Total}& \textbf{Rank} & \\
+			\whline
+			10.0 & 9.8 & 112.6 & 3rd &\\
+			\shline
+		\end{tabular}
+		\caption{Info of Central African Republic in 2017}\label{tab:Info of Central African Republic in 2017}
+	\end{table}
+	
+	
+	In the Fragile States Index data base, we can find some major factors for our model. After data conversion, we obtain the inputs for our prediction function (\textbf{Table 8})
+	
+	\begin{table}[htbp]
+		\renewcommand\arraystretch{1.5}
+		\footnotesize
+		\centering
+		\begin{tabular}{m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}}
+			\whline
+			\textbf{$P$}&\textbf{$M$}&\textbf{$E$}&\textbf{$S$}\\
+			\whline
+			9.85 & 9 & 8.87 & 9.5 \\
+			\shline
+		\end{tabular}
+		\caption{Factors of Central African Republic}\label{tab:Factors of Central African Republic}
+	\end{table}
+	
+	First, we want to determine how climate change may have increased fragility of Central African Republic, which is similar to what we have done in the last section. We assume the climate change to be a constant negative factor. The fragility of Central African Republic in 5 years is shown below
+	
+	\begin{figure}[h]
+		\small
+		\centering
+		\includegraphics[width=15cm]{figure5.jpg}
+		\caption{Fragility-Year Graph of Central African Republic} \label{fig:Fragility-Year Central African Republic}
+	\end{figure}
+	
+	It is apparent that if climate continue to be negative, a country will find it hard to adjust its policy, economy and society to reduce fragility. The fragility of Central African Republic is high enough in 2017, which can be even worse if climate remains harmful.
 
 
-
-
+	\subsection{Ways to mitigate fragility}
+	Then we try to find the fragility trend without climate change factor. Among the four factors we defined, policy factor is the only one that government can control, others can only be affected by the policy factor. So, we set climate factor to 0 and change policy factor, trying to find the value of policy factor when fragility won’t get worse in 5 years.
+	
+	Below is the fragility changing curve when policy factor is down to 9.37, the fragility will get better in 2 years then adjust itself to become as fragile as before, which indicate that in this kind of country, positive policy may not last long in current situation.
+	
+	\begin{figure}[h]
+		\small
+		\centering
+		\includegraphics[width=15cm]{figure6.jpg}
+		\caption{Fragility-Year of Graph Central African Republic} \label{fig:Fragility-Year Central African Republic}
+	\end{figure}
+	
+	So, the conclusion can be drawn: If government can still make right, positive decisions on economic and social policies, then the fragility might not get higher. If this country wants to be less fragile, its government should be very capable and outstanding on making right decisions, which might not be the case in most fragile countries.
 
 	\section{Sensitivity analysis on cultural diversity}
 	Since passengers from different areas have their own customs and norms, their behaviors are different, which could possibly influence our model. In this chapter, we analyze three representative types of passengers and how their cultural diversities impact our model. In the end, we demonstrate how our model accommodate these differences. 
@@ -445,7 +504,7 @@ biaoge
 	From the calculation we can attain that the probability of a entrance paralyzed is approximately 1\%, of two entrances paralyzed is about 0.005\%, and of more entrances paralyzed is almost 0. Assumptions above are appropriate for the time period of general passenger flow. Therefore, we analyze the sensitivity according to the situation that there are only one or two entrances paralyzed.
 	
 	Based on the previous optimization, we have already obtained that without the possibility of entrances paralyzed $W_q$ is about 20s, and no more than 40s .
-	\subsubsection{One entrance paralyzed}
+
 	From previous analysis, although the actual number of entrances is one less than the number we anticipate, it will result in the rapid increase of $W_q$. Assume that there is one entrance paralyzed, which means that passengers who are supposed to go through this entrance will wait in other entrances. The increase of other entrances should obey
 	$$\Delta L_q=\frac{\lambda\Delta t}{s(s-1)}$$
 	From what has been deduced before
@@ -459,7 +518,7 @@ biaoge
 		\caption{$\frac{dL_q}{dt}-\lambda$ when one entrance paralyzed} \label{fig:9}
 	\end{figure}\\
 	Under such rule, when there is one entrance paralyzed, the speed of increases of the number of passengers waiting in other entrances is shown in \textbf{Figure 9}. We assume that most of disputes will be solved in five minutes. From the figure we can estimate that the number of people increasing for every entrance is 3.9, and is at most 4, which is to say, $W_q$ at most will increase by 1.5 minutes with the probability of 1\%.
-	\subsubsection{Two entrances paralyzed}
+	
 	Similarly, when there are two entrances paralyzed, the speed of increases of the number of passengers for each entrances is
 	$$\frac{dL_q}{dt}=\frac{2\lambda}{\lceil\frac{\lambda}{\mu}-0.5\rceil(\lceil\frac{\lambda}{\mu}-0.5\rceil +1)}$$
 	If the flow of passengers is so little that the entrances open are less than two, the paralysis hardly happens. As a consequence, we omit the situation when $\lambda<0.1$ in the \textbf{Figure 10}.
@@ -472,8 +531,7 @@ biaoge
 	Under such situation, we also assume that a dispute can be solved in five minutes. Thus, the increasing number of passengers for each entrance is at most 12. Passengers can markedly feel the increase of passengers, but the waiting time for each individual still will increase no more than 5 minutes.
 	
 	The sensitivity analysis above is based on the distribution $\pi(0.01)$. If such paralyzing happens in a large scale, we do not need such model to analyze it. From our analysis, we can draw the conclusion that the influence of $W_q$ due to cutting in queues is small. To be more specific, the time will increase no more than 5 minutes.
-	
-	\subsection{Longer screening time}
+
 	Passengers from different areas spend different time for security check. For instance, Egyptians and Jews are used to wearing kerchiefs while Americans are used to wearing simple jeans and T-shirt, which will absolutely result in different checking time.\\
 	Assume that in this case 
 	$$W_q'=1.2W_q$$ 
@@ -494,7 +552,6 @@ biaoge
 	\end{figure}
 	In this case, $\Delta W_q\leq \pm 24.0s$ when $W_q$ is constant (25s). Campared with the previous result $\Delta W_q\leq \pm 19.4s$, we can conclude that longer screening time due to different dressing has little impact on our model.
 	
-	\subsection{More passengers getting additional screening}
 	Due to the culture discrepancies, passengers from different areas may have different understanding of definitions of contrabands. It is possible that some items are not allowed to take through the security checkpoint in some areas while such items can be safely carried in other areas. Furthermore, different countries have different norms of limited power of specific electronic equipments. Therefore, such discrepancies may lead to the increase of the probability of passengers from specific areas getting additional searching, which will decrease the efficiency of the whole system.
 	
 	In the previous chapter, we assume that the proportion of passengers getting additional screening is a small constant $\eta$ whose influence on the whole system can be ignored. Now considering the influences of culture discrepancies, we assume that $\eta=0.02$ which is large enough to affect the throughput of passengers. Assume that the additional searching time also obey Exponential Distribution $E(\mu_D)$, and $\mu_D=\frac{1}{10}\mu_B$.

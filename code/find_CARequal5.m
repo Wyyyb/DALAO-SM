@@ -1,4 +1,4 @@
-factors1=[9.1; 8.6; 8.65; 7.70]; %Haiti
+factors1=[9.85; 9; 8.87; 9.5]; %Central African Republic
 factors=factors1;
 K=[1/2 0 1/3 1/6; 0 2/3 1/6 1/6; 1/2 0 3/8 1/8; 1/4 1/4 1/4 1/4];
 year=5;

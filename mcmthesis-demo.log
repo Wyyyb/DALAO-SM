@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.30)  10 FEB 2018 13:59
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.30)  10 FEB 2018 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,7 +616,16 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 \savedwidth=\skip77
 \savewidth=\skip78
 
-(./mcmthesis-demo.aux)
+(./mcmthesis-demo.aux
+
+LaTeX Warning: Label `fig:Fragility-Year with random climate change' multiply d
+efined.
+
+
+LaTeX Warning: Label `fig:Fragility-Year Central African Republic' multiply def
+ined.
+
+)
 \openout1 = `mcmthesis-demo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -746,17 +755,7 @@ e-ory; Dy-namic Op-ti-miza-tion; Max-
 \tf@toc=\write5
 \openout5 = `mcmthesis-demo.toc'.
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 48.
- (c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1phv.fd
-File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
-)
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[1] [0]
+ [0]
 LaTeX Font Info:    Try loading font information for OMS+ppl on input line 61.
  (c:/texlive/2017/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
@@ -767,7 +766,11 @@ Missing character: There is no “ in font pplr8t!
 Missing character: There is no ” in font pplr8t!
 Missing character: There is no “ in font pplr8t!
 Missing character: There is no ” in font pplr8t!
+LaTeX Font Info:    Try loading font information for T1+phv on input line 76.
 
+(c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -837,39 +840,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7]
-File: ./figures/figure6.png Graphic file (type QTm)
- <use  "./figures/figure6.png" >
-Overfull \hbox (2.731pt too wide) in paragraph at lines 415--416
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 420.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 420.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 420.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 420.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 420.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 420.
-
+File: ./figures/figure3.jpg Graphic file (type QTm)
+ <use  "./figures/figure3.jpg" >
+File: ./figures/figure4.jpg Graphic file (type QTm)
+ <use  "./figures/figure4.jpg" >
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -878,64 +852,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [8]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 426.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
-
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [9]
+File: ./figures/figure5.jpg Graphic file (type QTm)
+ <use  "./figures/figure5.jpg" >
+Overfull \hbox (2.731pt too wide) in paragraph at lines 476--477
+ [][] 
+ []
+
+Missing character: There is no ’ in font pplr8t!
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -943,25 +872,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10]
+File: ./figures/figure6.jpg Graphic file (type QTm)
+ <use  "./figures/figure6.jpg" >
+Overfull \hbox (2.731pt too wide) in paragraph at lines 491--492
+ [][] 
+ []
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
 
-[11]
-File: ./figures/figure7.png Graphic file (type QTm)
- <use  "./figures/figure7.png" >
-File: ./figures/figure8.png Graphic file (type QTm)
- <use  "./figures/figure8.png" >
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[12]
-Overfull \hbox (0.33907pt too wide) in paragraph at lines 531--532
+Overfull \hbox (0.33907pt too wide) in paragraph at lines 500--501
 \T1/ppl/m/n/12 Passengers from some ar-eas have the con-cept of pri-or-i-tiz-in
 g in-di-vid-ual ef-fi-ciency,
  []
@@ -972,9 +890,40 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13]
+[11]
 File: ./figures/figure9.png Graphic file (type QTm)
  <use  "./figures/figure9.png" >
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./figures/figure10.png Graphic file (type QTm)
+<use  "./figures/figure10.png" >
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+File: ./figures/figure11.png Graphic file (type QTm)
+ <use  "./figures/figure11.png" >
+Overfull \hbox (2.731pt too wide) in paragraph at lines 544--545
+ [][] 
+ []
+
+File: ./figures/figure12.png Graphic file (type QTm)
+<use  "./figures/figure12.png" >
+Overfull \hbox (2.731pt too wide) in paragraph at lines 550--551
+ [][] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -982,43 +931,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [14]
-File: ./figures/figure10.png Graphic file (type QTm)
- <use  "./figures/figure10.png" >
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[15]
-File: ./figures/figure11.png Graphic file (type QTm)
- <use  "./figures/figure11.png" >
-Overfull \hbox (2.731pt too wide) in paragraph at lines 576--577
- [][] 
- []
-
-File: ./figures/figure12.png Graphic file (type QTm)
-<use  "./figures/figure12.png" >
-Overfull \hbox (2.731pt too wide) in paragraph at lines 582--583
- [][] 
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[16]
 File: ./figures/figure13.png Graphic file (type QTm)
  <use  "./figures/figure13.png" >
-Overfull \hbox (2.731pt too wide) in paragraph at lines 597--598
+Overfull \hbox (2.731pt too wide) in paragraph at lines 564--565
  [][] 
  []
 
 File: ./figures/figure14.png Graphic file (type QTm)
 <use  "./figures/figure14.png" >
-Overfull \hbox (2.731pt too wide) in paragraph at lines 603--604
+Overfull \hbox (2.731pt too wide) in paragraph at lines 570--571
  [][] 
  []
 
@@ -1029,12 +950,44 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17]
-Overfull \hbox (7.05962pt too wide) in paragraph at lines 619--620
+[15]
+Overfull \hbox (7.05962pt too wide) in paragraph at lines 586--587
 []\T1/ppl/m/n/12 Promote Pre-Check ser-vice, and in-crease the num-ber of Pre-C
 heck en-trances,
  []
 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 607.
+ (c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
+[][]$\T1/pcr/m/n/12 https : / / en . wikipedia . org / wiki / Fragile _ state #
+ Defining _
+ []
+
+Missing character: There is no “ in font pplr8t!
+Missing character: There is no ” in font pplr8t!
+
+Overfull \hbox (8.52843pt too wide) in paragraph at lines 703--703
+ []|\T1/ppl/b/n/12 Symbol| 
+ []
+
+
+AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1049,24 +1002,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [19]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 640.
- (c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
-[][]$\T1/pcr/m/n/12 https : / / en . wikipedia . org / wiki / Fragile _ state #
- Defining _
- []
-
-Missing character: There is no “ in font pplr8t!
-Missing character: There is no ” in font pplr8t!
-
-Overfull \hbox (8.52843pt too wide) in paragraph at lines 736--736
- []|\T1/ppl/b/n/12 Symbol| 
- []
-
-
-AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1081,33 +1016,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [21]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[22]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 790.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 790.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 757.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 757.
  (./mcmthesis-demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 790.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 790.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 757.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 757.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 13864 strings out of 493005
- 191991 string characters out of 6137956
- 372442 words of memory out of 5000000
- 17547 multiletter control sequences out of 15000+600000
+ 13865 strings out of 493005
+ 192111 string characters out of 6137956
+ 371103 words of memory out of 5000000
+ 17546 multiletter control sequences out of 15000+600000
  33967 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 41i,14n,67p,1034b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,67p,1034b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mcmthesis-demo.pdf (27 pages).
+Output written on mcmthesis-demo.pdf (24 pages).

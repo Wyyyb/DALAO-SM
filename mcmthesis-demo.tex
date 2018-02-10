@@ -427,13 +427,58 @@
 	
 	\section{Run model on the most fragile country}
 	\subsection{How climate change increase fragility}
-In the section above, we have already build up our evaluation model of fragility. To test this model on some extreme situation, we first select one of the most fragile country: Haiti, which is on the edge of crashing.
+	In the section above, we have already build up our evaluation model of fragility. To test this model on some extreme situation, we first select one of the most fragile country: Central African Republic, which is on the edge of crashing.
 
-biaoge
+	\begin{table}[htbp]
+		\renewcommand\arraystretch{1.5}
+		\footnotesize
+		\centering
+		\begin{tabular}{m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}}
+			\whline
+			\textbf{C1: Security Apparatus}&\textbf{C2: Factionalized Elites}&\textbf{C3: Group Grievance}&\textbf{E1: Economy}&\textbf{E2: Economic Inequality} \\
+			\whline
+			9.0 & 9.7 & 9.1 & 9.1 & 10.0\\
+			\whline
+			\textbf{E3: Human Flight and Brain Drain}&\textbf{P1: State Legitimacy}&\textbf{P2: Public Services}&\textbf{P3: Human Rights}&\textbf{S1: Demographic Pressures} \\
+			\whline
+			7.5 & 9.7 & 10.0 & 9.7 & 9.0\\
+			\whline
+			\textbf{S2: Refugees and IDPs}&\textbf{X1: External Intervention}&\textbf{Total}& \textbf{Rank} & \\
+			\whline
+			10.0 & 9.8 & 112.6 & 3rd &\\
+			\shline
+		\end{tabular}
+		\caption{Info of Central African Republic in 2017}\label{tab:Info of Central African Republic in 2017}
+	\end{table}
+	
+	
+	In the Fragile States Index data base, we can find some major factors for our model. After data conversion, we obtain the inputs for our prediction function
+	
+	\begin{table}[htbp]
+		\renewcommand\arraystretch{1.5}
+		\footnotesize
+		\centering
+		\begin{tabular}{m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}|m{2.5cm}<{\centering}}
+			\whline
+			\textbf{$P$}&\textbf{$M$}&\textbf{$E$}&\textbf{$S$}\\
+			\whline
+			9.85 & 9 & 8.87 & 9.5 \\
+			\shline
+		\end{tabular}
+		\caption{Factors of Central African Republic in 2017}\label{tab:Factors of Central African Republic in 2017}
+	\end{table}
+	
+	First, we want to determine how climate change may have increased fragility of Central African Republic, which is similar to what we have done in the last section. We assume the climate change to be a constant negative factor. The fragility of Central African Republic in 5 years is shown below
+	
+	It is apparent that if climate continue to be negative, a country will find it hard to adjust its policy, economy and society to reduce fragility. The fragility of Central African Republic is high enough in 2017, which can be even worse if climate remains harmful.
 
 
-
-
+	\subsection{Ways to mitigate fragility}
+	Then we try to find the fragility trend without climate change factor. Among the four factors we defined, policy factor is the only one that government can control, others can only be affected by the policy factor. So, we set climate factor to 0 and change policy factor, trying to find the value of policy factor when fragility won’t get worse in 5 years.
+	
+	Below is the fragility changing curve when policy factor is down to 9.37, the fragility will get better in 2 years then adjust itself to become as fragile as before, which indicate that in this kind of country, positive policy may not last long in current situation.
+	
+	So, the conclusion can be drawn: If government can still make right, positive decisions on economic and social policies, then the fragility might not get higher. If this country wants to be less fragile, its government should be very capable and outstanding on making right decisions, which might not be the case in most fragile countries.
 
 	\section{Sensitivity analysis on cultural diversity}
 	Since passengers from different areas have their own customs and norms, their behaviors are different, which could possibly influence our model. In this chapter, we analyze three representative types of passengers and how their cultural diversities impact our model. In the end, we demonstrate how our model accommodate these differences. 

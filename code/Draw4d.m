@@ -19,7 +19,7 @@ toc
 subplot(2, 2, 1);
 surf(T,R,L,fval);
 title('D');
-shading interp;light;lighting gouraud;
+%shading interp;light;lighting gouraud;
 colormap(hsv(128));
 colorbar
 axis equal;
@@ -38,7 +38,7 @@ toc
 subplot(2, 2, 2);
 surf(R,L,D,fval);
 title('T');
-shading interp;light;lighting gouraud;
+%shading interp;light;lighting gouraud;
 colormap(hsv(128));
 colorbar
 axis equal;
@@ -57,7 +57,10 @@ toc
 subplot(2, 2, 3);
 surf(T,L,D,fval);
 title('R');
-shading interp;light;lighting gouraud;
+% shading interp;
+% light;
+% material dull;
+% lighting gouraud;
 colormap(hsv(128));
 colorbar
 axis equal;
@@ -77,7 +80,7 @@ toc
 subplot(2, 2, 4);
 surf(T,R,D,fval);
 title('L');
-shading interp;light;lighting gouraud;
+%shading interp;light;lighting gouraud;
 colormap(hsv(128));
 colorbar
 axis equal;

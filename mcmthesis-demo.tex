@@ -193,7 +193,26 @@ $$
 There may be doubts whether military factor will be affected. As a matter of fact, military factor will change, but not on the direct effect of climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
 
 
-\subsection{!}
+\subsection{Estimation for some parameters}
+Three effects of climate change (natural disasters, sea-level rise, and increasing resource scarcity) are frequently assumed to lead to loss of livelihood, economic decline, and increased insecurity either directly or through forced migration. Interacting with poor governance, societal inequalities, and a bad neighborhood, these factors in turn may promote
+political and economic instability, social fragmentation, migration, and inappropriate responses from governments. Eventually this produces increased motivation for instigating violence as well as improved opportunities for mobilization.
+
+translation
+
+In addition, A long line of research links hot temperatures to individual aggression, including violent crime and riots. The simple scarcity (or neo-Malthusian) model of conflict assumes that if climate change results in a reduction in essential resources for livelihood, such as food or water, those affected by the increasing scarcity may start fighting over the remaining resources. Alternatively, people may be forced to leave the area and create new scarcities when they encroach on the territory of other people who may also be resource-constrained. Barnett and Adger (2007) review a broad range of studies of both of these effects, focusing particularly on countries where a large majority of the population is still dependent on employment in the primary sector. If climate change results in reduced rainfall and higher temperature that jointly causes droughts, and reduced access to the natural capital that sustains livelihoods, poverty will be more widespread and the potential for conflict greater.
+
+translation
+
+$$
+\left(
+\begin{matrix}
+	\frac{1}{2} & 0 & \frac{1}{3} & \frac{1}{6} \\
+	0 & \frac{2}{3} & \frac{1}{6} & \frac{1}{6} \\
+	\frac{1}{2} & 0 & \frac{3}{8} & \frac{1}{8} \\
+	\frac{1}{4} &\frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
+\end{matrix}
+\right) 
+$$
 
 \begin{table}[htbp]
 	\renewcommand\arraystretch{1.5}
@@ -264,40 +283,6 @@ There may be doubts whether military factor will be affected. As a matter of fac
 	\caption{Interplay of different factors - Quantitative study}\label{tab:Interplay of different factors - Quantitative study}
 \end{table}
 
-For the ID-check, the basic sketch is shown in \textbf{Figure 3}.
-\begin{figure}[h]
-\small
-\centering
-\includegraphics[width=10cm]{figure3.png}
-\caption{Basic sketch for ID-check} \label{fig:Basic sketch for ID-check}
-\end{figure}\\
-For the screening lanes, the basic sketch is shown in \textbf{Figure 4}.
-
-\begin{figure}[h]
-\small
-\centering
-\includegraphics[width=10cm]{figure4.png}
-\caption{Basic sketch for screening lanes} \label{fig:Basic sketch for screening lanes}
-\end{figure}
-In order to build the model clearly and precisely, we have to make some assumptions. Since the data of most airports are inaccessible, we assume the distribution functions of the flow of passengers, of time for ID check and of time for security check as below.
-\begin{itemize}
-\item The number of arriving passengers per second is subject to Poisson Distribution. For the Pre-Check Entrance and Regular Entrance, we have
-$$P(\lambda_{Pi}=k)=\frac{e^{-\lambda_P}(\lambda_P)^k}{k!}$$
-$$P(\lambda_{Ri}=k)=\frac{e^{-\lambda_R}(\lambda_R)^k}{k!}$$
-\item The time it takes at each ID-Checkpoint per person is subject to exponential distribution
-$$F(t)=1-e^{-\mu_At}$$
-\item The time it takes to pass Zone B per person is subject to exponential distribution as well
-$$F(t)=1-e^{-\mu_Bt}$$
-\end{itemize}
-
-Based on data we have received, we can attain the estimated value for $\lambda_P$, $\lambda_R$, $\mu_A$, and $\mu_B$ ( See details about the data in \textbf{Appendix A}). We use Successive Minus to calculate the average value. For the number of the arriving passengers per second, the average time interval $\overline{\Delta t_P}$ between every 29 persons at the Pre-Checkpoint is 286.6s. Therefore, due to Moment Estimation, $\lambda_P$ is given by
-$$\widehat{\lambda_P}=\frac{\overline{n_{Pi}}}{\overline{\Delta t_P}}=0.1012s^{-1}$$
-By similar method, we can obtain the estimated values for $\lambda_R$ as well ( $\overline{\Delta t_R}$ is the average time interval between every 23 persons at the regular checkpoint )
-$$\widehat{\lambda_R}=\frac{\overline{n_{Ri}}}{\overline{\Delta t_R}}=0.0668s^{-1}$$
-Existing data provide two samples of ID-Check process time. By calculating the average time costing for each TSA officer and taking the average of these results again$(\overline{t_A})$, we can acquire the estimated value for $\mu_A$
-$$\widehat{\mu_A}=\frac{1}{\overline{t_A}}=0.0877s^{-1}$$
-Based on the time costed at Zone B for each passenger, we can get $\mu_B$
-$$\widehat{\mu_B}=\frac{1}{\overline{t_B}}=0.0349s^{-1}$$
 \subsection{Current process analysis}
 As the additional screening is not always happening, we can assume the proportion of this unexpected case to be a certain small constant $\eta$. Since $\eta$ is small, every passenger who gets additional searching will not wait in Zone D, as a result, the change of flow can be approximatively ignored. If given the maximum of passenger flow $f_{max}$, the function to describe exit passengers' number is
 \begin{equation}

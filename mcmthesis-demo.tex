@@ -89,7 +89,7 @@
 	After that, an evaluation function can be determined by weighting the factors’ contribution to fragility. Even more, we can also gain a recursion function to predict the country's fragility in a few years. Using these functions to evaluate current status of some typical countries, an evaluation standard then be settled.
 	
 	\subsection{Model establishing without climate change}
-	Based on the schema, we focus on several factors that might have the most impact on a country's fragility. Policies issued by government, military activities, social problems and economic crisis are four major factors effecting fragility. These factors also have interconnections, which makes this model more realistic and manageable.
+	Based on the schema below (\textbf{Figure 1}), we focus on several factors that might have the most impact on a country's fragility. Policies issued by government, military activities, social problems and economic crisis are four major factors effecting fragility. These factors also have interconnections, which makes this model more realistic and manageable.
 	
 	\begin{figure}[h]
 		\small
@@ -187,7 +187,7 @@
 	
 	\subsection{Modified Markov Model including climate change}
 	
-	We can find in the schema that climate change has direct influence on \textbf{policy factor}, \textbf{economy factor} and \textbf{social factor}, which indicates that there are several modifications to make. Since only the \textbf{military factor} is not affected, the modified prediction function should be as follow
+	We can find in the schema (\textbf{Figure 1}) that climate change has direct influence on \textbf{policy factor}, \textbf{economy factor} and \textbf{social factor}, which indicates that there are several modifications to make. Since only the \textbf{military factor} is not affected, the modified prediction function should be as follow
 	
 	$$
 	\left(
@@ -293,7 +293,10 @@
 		\caption{Interplay of different factors - Quantitative study}\label{tab:Interplay of different factors - Quantitative study}
 	\end{table}
 	
-	We apply quantitative analysis on the influence of climate change (\textbf{Table 3}) and interplay of other factors (\textbf{Table 4}), and attain matrix $K$ and $K_c$ as follows
+	We apply quantitative analysis on the influence of climate change (\textbf{Table 3}) and interplay of other factors (\textbf{Table 4}). The figures in each cell denote the number of studies that support, do not support, or contradict the proposed hypothesis. The total number of
+	reviewed studies per outcome is computed and will be used for the computation of parameters. To be more specific, for each cell we need to calculate an parameter that represents the influence of the row factor on the column factor. If there is a study that supports the relation, we increase the outcome by 1; if there is a study that is opposite to the relation, we decrease it by 1. Then we calculates the sum of each row, and consider the proportion of each cell in the sum as the parameter of that cell. 
+	
+	Finally ,we attain matrix $K$ and $K_c$ as follows
 	\begin{spacing}{1.5}
 		$$
 		K = 
@@ -359,7 +362,7 @@
 		\end{equation}
 	\end{spacing}
 	
-	The results are as follows
+	The results are as follows (\textbf{Table 5})
 	
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
@@ -379,7 +382,7 @@
 		\end{tabular}
 		\caption{Factors of Italy, China, and Egypt}\label{tab:Factors of Italy, China, and Egypt}
 	\end{table}
-	After getting these data, we use the evaluation function $(1)$ to obtain their fragility.
+	After getting these data, we use the evaluation function $(1)$ to obtain their fragility. (\textbf{Table 6})
 	
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
@@ -402,10 +405,25 @@
 	
 	So we can now define stable as fragility below 15.18, vulnerable as fragility above 24.33 and fragile as fragility above 28.95.
 	
-	\subsection{Assessment and conclusion}
-	This model is only an estimation of the current operating system at one certain airport, and it has some limitations. First of all, we use moment estimators of passenger flow and passing time to calculate relevant parameters, which suits well mostly under the circumstance that sampling time is long enough and that people' s  arriving possibility is equal all the time. If not, the accuracy of the result can not be completely gauaranteed. Secondly, we did not consider the differences among people. For example, the elder are more likely to act slowlier than youngsters, and we wonder if this difference would cause changes in some parameters. Finally, we did not consider the time saved for those who have bought Pre-Check service, as we did not attain the relevant data. However, it is undeniably an important factor when calculating the passing time of screening.
+	\subsection{The Impact of Climate Change}
 	
-	So, we draw the conclusion that, when all the assumptions are positive, the passenger flow firstly increases as the input flow gets up, then when the ID-Checkpoint or screening check-lanes reach saturation, the flow of departing passengers starts to maintain a stable value. As for the maximum throughput for the current model, we have attained the result that when $N_L/N_P=10$, the flow of departing passengers reaches its peak, which is the bottleneck of the input flow for current model. However, as we can see from the figure given, $N_L/N_P<10$, so the screening check-lanes reach saturation earlier than ID-Checkpoint. As a result, the problem area mainly exists in \textbf{Zone B}.
+	In this section, we use an example to further illustrate the impact of climate change. Applying our model, we measure the impact of climate change and analyze how it changes the fragility of a state. We first assume the change of climate is random, and compare the fragility of the country with and without the influence of climate change. Then we assume the climate change is always negative, and do the same comparison.
+	
+	As is shown in \textbf{Figure 2},  calculated by our model above, the red line represents the fragility of the country as time passes without the influence of climate change; the green line is the fragility with the indirect influence of climate change; the blue line is the fragility with the indirect and direct influence of climate change. According to the figure, the impact of climate change has both positive and negative side. 
+	\begin{figure}[h]
+		\small
+		\centering
+		\includegraphics[width=15cm]{figure3.jpg}
+		\caption{Fragility-Year with random climate change} \label{fig:Fragility-Year with random climate change}
+	\end{figure}
+
+	In \textbf{Figure 3}, the implication of each line is same as what is illustrated above. It is clear that climate change increases fragility of the country. It will cause such consequence through direct impact and indirect means, which accords with the discussion in the previous chapters.
+	\begin{figure}[h]
+		\small
+		\centering
+		\includegraphics[width=15cm]{figure4.jpg}
+		\caption{Fragility-Year with negative climate change} \label{fig:Fragility-Year with negative climate change}
+	\end{figure}
 	
 	\section{Modifications for current process}
 	After analyzing the flow of passengers and existing bottlenecks of the current process of security check, we propose several modifications in order to increase the throughput of passengers and reduce variance in waiting time. Since the calculation of the average waiting time depends on the values of $N_P$, $N_R$, $N_B$ and $N_X$ ( See \textbf{Figure 6}), we first modify the ratio of $N_P$, $N_R$, $N_B$ and $N_X$ so as to maximize the throughput, and on that basis we develop a dynamic optimization fuction to adjust the number of entrances as the flow of passengers entering the checkpoint changes, by which we can minimize variance in waiting time.  

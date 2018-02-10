@@ -425,124 +425,16 @@
 		\caption{Fragility-Year with negative climate change} \label{fig:Fragility-Year with random climate change}
 	\end{figure}
 	
-	\section{Modifications for current process}
-	After analyzing the flow of passengers and existing bottlenecks of the current process of security check, we propose several modifications in order to increase the throughput of passengers and reduce variance in waiting time. Since the calculation of the average waiting time depends on the values of $N_P$, $N_R$, $N_B$ and $N_X$ ( See \textbf{Figure 6}), we first modify the ratio of $N_P$, $N_R$, $N_B$ and $N_X$ so as to maximize the throughput, and on that basis we develop a dynamic optimization fuction to adjust the number of entrances as the flow of passengers entering the checkpoint changes, by which we can minimize variance in waiting time.  
-	\begin{figure}[h]
-		\small
-		\centering
-		\includegraphics[width=15cm]{figure6.png}
-		\caption{Skecth of a security checkpoint} \label{fig:Skecth of a security checkpoint}
-	\end{figure}
-	\subsection{Modifications for increasing passenger throughput}
-	We find three small modifications to increase passenger flow when the throughput gets saturated.
-	\subsubsection{Change ratio of $N_X$ to $N_B$}
-	We look into the data provided, and find that the time for people's properties getting scanned is much more than the time costed on themselves. So, if we could change $N_X/N_B$ to a more suitable value, the time utilization ratio can be developed. We analyze the data and use Successive Minus to calculate the ratio of average time spent on properties and persons, then we find that
-	$$t_X:t_B=2.2:1$$
-	So, when we do not have a large number of screening-lanes, we can set 
-	$$N_X:N_B=2:1$$
-	That is to say, when every two people share one millimeter wave body scanner and use two screening belt, the waiting time reach its minimum value and the efficiency of Zone B gets maximum. There is an accurate definition for "waiting" here that one person stops waiting as soon as he(she) puts his(her) baggage on the X-ray belt.
-	\subsubsection{Change ratio of $N_P$ to $N_R$}
-	We have calculated the ratio of people choosing Pre-Check to people choosing Regular-Check in our basic model according to the data.
-	$$\lambda_P:\lambda_R=3:2$$
-	Generally, we can set the ratio to
-	$$N_P:N_R=3:2$$
-	\subsubsection{Change the ratio of $(N_P+N_R)$ to $N_X$}
-	The modification above applied, the average time for passengers passing the screening-lanes is shortened, and the average flow for each lane is enlarged
-	$$\widehat{\mu_B}=\frac{1}{\overline{t_B}'}=0.0714s^{-1}$$
-	$\mu_A$ is still the same value. Thus, due to the stability equation
-	$$(N_P+N_R)\mu_A=N_X\mu_B$$
-	We can find when
-	$$N_X=1.2(N_P+N_R)$$
-	the whole system is stable and there will be no congestion inside the security checkpoint.
-	The further modifications are all based on these three basic principles.
-	\subsection{Modifications for reducing time variance}
-	In this section, we apply the Queuing Theory Model to simulate the process of security check. According to the Queuing Theory Model, we can obtain a relationship between $W_q$ (average waiting time for every passenger) and $s$ (the number of entrances). In order to minimize the variance of $W_q$, the airport should adjust $s$ based on various flow of passengers entering the checkpoint, which is related to $\lambda$.
-	
-	According to the assumptions we have already proposed, the number of arriving passengers per unit time obey Poisson Distribution $\pi(\lambda)$, and time passing through the ID-check or screening area obey Exponential Distribution $E(\mu)$. Define $\rho=\frac{\lambda}{s\mu}$. From the Queuing Theory Model, we can obtain the following results:
-	
-	\begin{itemize}
-		\item When the number of entrances is $s$, the probability $P_n(s)$ when there are $n$ passengers in the system  is
-		\begin{equation}
-		P_n(s)=
-		\begin{cases}
-		\frac{(s\rho)^n}{n!}P_0(s), &\mbox{$n=1,2,\ldots,s$}\\
-		\frac{s^s\rho^n}{s!}P_0(s)=\rho^{n-s}P_s(s), &\mbox{$n=s+1,s+2,\ldots$}
-		\end{cases}
-		\end{equation}
-		$$P_0(s)=[\sum_{n=0}^{s-1}\frac{(s\rho)^n}{n!}+\frac{(s\rho)^s}{s!}(\frac{1}{1-\rho})]^{-1}$$
-		\item The average number of passengers waiting in queues $L_q$ is
-		$$L_q=\sum_{n=s+1}^{\infty}(n-s)P_n(s)=\frac{(s\rho)^s\rho}{s!(1-\rho)^2}P_0(s)$$
-		\item The average number of passengers in the checkpoint $L_s$ is 
-		$$L_S=L_q+s\rho$$
-		\item The average time waiting in queues $W_q$ is
-		$$W_q=\frac{L_q}{\lambda}$$
-		\item The average time spending in the checkpoint $W_s$ is
-		$$W_s=\frac{L_s}{\lambda}$$
-	\end{itemize}
-	
-	More specifically, since in the previous modifiations we rearranged the proportianal relationship between $N_P$ and $N_R$ so as to make sure the passengers uniformly entering every entrances. Therefore, we consider the whole checkpoint as a M/M/S system, where $s$ is the sum of $N_P$ and $N_R$, and $\lambda$ is the number of passengers  arriving at every entrance per unit time. Furthermore, since the total servce time is the sum of time in Zone A and Zone B, $\mu$ can be attained as follows.
-	$$\mu=\frac{1}{\frac{1}{\mu_A}+\frac{1}{\mu_B}}=0.0433s^{-1}$$
-	Then, we use Matlab to simulate our model. Firstly, we assign different values to $s$ from 2 to 15 and calculate the corresponding $\lambda$ on condition that $W_q$ keeps constant ($25s$). Results are shown in \textbf{Table 3}.
-	
-	\begin{table}[htbp]
-		\centering
-		\begin{tabular}{m{4cm}<{\centering}m{4cm}<{\centering}}
-			\toprule
-			\textbf{$s$}&\textbf{$\lambda\ (s^{-1})$}\\
-			\midrule
-			2&0.0866\\
-			
-			3&0.1299\\
-			
-			4&0.1732\\
-			
-			5&0.2156\\
-			
-			6&0.2598\\
-			
-			7&0.3031\\
-			
-			8&0.3464\\
-			
-			9&0.3897\\
-			
-			10&0.4330\\ 
-			
-			11&0.4763\\ 
-			
-			12&0.5196\\
-			
-			13&0.5629\\
-			
-			14&0.6062\\
-			
-			15&0.6495\\
-			\bottomrule
-		\end{tabular}
-		\caption{$s-\lambda$}\label{tab:Data}
-	\end{table}
-	From the data above, it can be discovered that $s$ and $\lambda$ are directly propotional. Therefore, assuming that $s$ and $\lambda$ are continuous, we can figure out the fuctional relationship between $\lambda$ and $s$:
-	$$s=\frac{\lambda}{0.0433}$$
-	We notice that $\mu=0.0433s^{-1}$, so we can draw the conclution that
-	$$s=\frac{\lambda}{\mu}$$
-	Then, we apply different approaches to round $s$ to appropriate integers. See \textbf{Figure 7}.
-	
-	
-	Moreover, we draw the fitting figure between $W_q$ and $\lambda$ in \textbf{Figure 8} in order to assess different  approaches. In \textbf{Figure 8}, (1) and (2) will lead to long waiting time under specific conditions, which is due to the unstable state of the system. Such unstability is the result of $\rho=\frac{\lambda}{s\mu}>1$. As for (3) and (4), such unstability can be avoided, but (3) brings higher cost. Thus, we apply the approach in (4) to round $s$. 
-	\begin{figure}[H]
-		\small
-		\centering
-		\includegraphics[width=14.5cm]{figure7.png}
-		\caption{$s-\lambda$ of different approaches} \label{fig:7}
-	\end{figure} 
-	
-	In conclution, as $\lambda$ changes, we set $s$ as $s=\lceil\frac{\lambda}{\mu}-0.5\rceil+1$, which means when the flow of passengers entering the checkpoint increase, the airport need to increase the number of entrances according to the relationship above. By this method, we can reduce variance in waiting time by $\Delta W_q \leq \pm19.4s$.
-	\begin{figure}[H]
-		\small
-		\centering
-		\includegraphics[width=14.5cm]{figure8.png}
-		\caption{$W_q-\lambda$ of different approaches} \label{fig:8}
-	\end{figure}
+	\section{Run model on the most fragile country}
+	\subsection{How climate change increase fragility}
+In the section above, we have already build up our evaluation model of fragility. To test this model on some extreme situation, we first select one of the most fragile country: Haiti, which is on the edge of crashing.
+
+biaoge
+
+
+
+
+
 	\section{Sensitivity analysis on cultural diversity}
 	Since passengers from different areas have their own customs and norms, their behaviors are different, which could possibly influence our model. In this chapter, we analyze three representative types of passengers and how their cultural diversities impact our model. In the end, we demonstrate how our model accommodate these differences. 
 	\subsection{Entrances paralyzed due to cutting in lines}

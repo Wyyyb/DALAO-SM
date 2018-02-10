@@ -7,7 +7,6 @@
 \usepackage{float}
 \usepackage{etoc}
 \usepackage{array}
-\usepackage{setspace}
 \newcolumntype{I}{!{\vrule width 3pt}}
 \newlength\savedwidth
 \newcommand\whline{\noalign{\global\savedwidth\arrayrulewidth
@@ -133,19 +132,6 @@ Based on the schema, we focus on several factors that might have the most impact
 	\caption{Definition of notations in the model}\label{tab:Definition of notations in the model}
 \end{table}
 
-To evaluate the fragility of a country, we define the evaluation function $F$
-
-\begin{equation}
-	F = w 
-	\left(
-	\begin{matrix}
-		P_N \\ M_N \\ E_N \\ S_N
-	\end{matrix}
-	\right)
-\end{equation}
-
-In the function, $w$ is the weight of the variables, which is $(w_1, w_2, w_3, w_4)$. Since in the subsequent paragraphs we will normalize $P_N, M_N, E_N, S_N$, and for conciseness of the formula, we could assume w to be 1 for each variable.
-
 As assumed, if climate and external intervention remains zero, our major factors should be a \textbf{Markov Model}, which is
 
 $$
@@ -169,25 +155,11 @@ P_N \\ M_N \\ E_N \\ S_N
 \end{matrix}
 \right) 
 $$
-Specifically, $P$ is the negative effect of improper policy issued by the government, $M$ is the decrease of security apparatus, $E$ is economic declining, and $S$ is social unrest. Assume coefficient matrix is $K$, then the function becomes
-$$
-\left(
-\begin{matrix}
-P_{N+1} \\ M_{N+1} \\ E_{N+1} \\ S_{N+1}
-\end{matrix}
-\right) 
-= 
-K
-\left(
-\begin{matrix}
-P_N \\ M_N \\ E_N \\ S_N
-\end{matrix}
-\right) 
-$$
+Specifically, $P$ is the negative effect of improper policy issued by the government, $M$ is the decrease of security apparatus, $E$ is economic declining, and $S$ is social unrest.
 
 \subsection{Modified Markov Model including climate change}
 
-We can find in the schema that climate change has direct influence on \textbf{policy factor}, \textbf{economy factor} and \textbf{social factor}, which indicates that there are several modifications to make. Since only the \textbf{military factor} is not affected, the modified prediction function should be as follow
+We can find in the schema that climate change has direct influence on policy factor, economy factor and social factor, which indicates that there are several modifications to make. Since only the military factor is not affected, the modified prediction function should be as follow
 
 $$
 \left(
@@ -196,33 +168,51 @@ P_{N+1} \\ M_{N+1} \\ E_{N+1} \\ S_{N+1}
 \end{matrix}
 \right) 
 = 
-K 
+\left(
+\begin{matrix}
+k_{11} & k_{12} & k_{13} & k_{14} \\
+k_{21} & k_{22} & k_{23} & k_{24} \\
+k_{31} & k_{32} & k_{33} & k_{34} \\
+k_{41} & k_{42} & k_{43} & k_{44} \\
+\end{matrix}
+\right) 
 \left(
 \begin{matrix}
 P_N \\ M_N \\ E_N \\ S_N
 \end{matrix}
 \right) 
 +
-K_c
-C
-, \quad
-K_c = 
 \left(
 \begin{matrix}
 k_{CP} \\ {0} \\ k_{CE} \\ k_{CS}
 \end{matrix}
-\right)
+\right) 
+C
 $$
-$CP$ is the influence , There may be doubts whether \textbf{military factor} will be affected. As a matter of fact, \textbf{military factor} will change, but not on the direct effect of climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
+
+There may be doubts whether military factor will be affected. As a matter of fact, military factor will change, but not on the direct effect of climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
 
 
 \subsection{Estimation for some parameters}
 Three effects of climate change (natural disasters, sea-level rise, and increasing resource scarcity) are frequently assumed to lead to loss of livelihood, economic decline, and increased insecurity either directly or through forced migration. Interacting with poor governance, societal inequalities, and a bad neighborhood, these factors in turn may promote
-political and economic instability, social fragmentation, migration, and inappropriate responses from governments. Eventually this produces increased motivation for instigating violence as well as improved opportunities for mobilization.[2]
+political and economic instability, social fragmentation, migration, and inappropriate responses from governments. Eventually this produces increased motivation for instigating violence as well as improved opportunities for mobilization.
 
-Events related to climate may cause a huge influence on the society, since they will impact the provisionment, conditions of countries and communities, and acquisition of clean water and energy. For example, according to a report from the Climate Action Network of Australia, climate change may decrease the precipitation of prairies, which may lead to a $15\%$ decline in grass productivity. In turn, it could further result in a $12\%$ drop in average weight of cattle, which decreases the beef supply. Under such condition, milk yield of cattle will decline by $30\%$, and new pests will spread in the areas. Furthermore, such condition will cause a $10\%$ decline of drinking water. According to the model of upcoming changing conditions, in the next 15 - 30 years, such situation may happen in a number of grain production bases around the world, which will result in an enormous impact on the economy and society to a large extent. 
+translation
 
-In addition, A long line of research links hot temperatures to individual aggression, including violent crime and riots. The simple scarcity (or neo-Malthusian) model of conflict assumes that if climate change results in a reduction in essential resources for livelihood, such as food or water, those affected by the increasing scarcity may start fighting over the remaining resources. Alternatively, people may be forced to leave the area and create new scarcities when they encroach on the territory of other people who may also be resource-constrained. Barnett and Adger (2007) review a broad range of studies of both of these effects, focusing particularly on countries where a large majority of the population is still dependent on employment in the primary sector. If climate change results in reduced rainfall and higher temperature that jointly causes droughts, and reduced access to the natural capital that sustains livelihoods, poverty will be more widespread and the potential for conflict greater.[2]
+In addition, A long line of research links hot temperatures to individual aggression, including violent crime and riots. The simple scarcity (or neo-Malthusian) model of conflict assumes that if climate change results in a reduction in essential resources for livelihood, such as food or water, those affected by the increasing scarcity may start fighting over the remaining resources. Alternatively, people may be forced to leave the area and create new scarcities when they encroach on the territory of other people who may also be resource-constrained. Barnett and Adger (2007) review a broad range of studies of both of these effects, focusing particularly on countries where a large majority of the population is still dependent on employment in the primary sector. If climate change results in reduced rainfall and higher temperature that jointly causes droughts, and reduced access to the natural capital that sustains livelihoods, poverty will be more widespread and the potential for conflict greater.
+
+translation
+
+$$
+\left(
+\begin{matrix}
+	\frac{1}{2} & 0 & \frac{1}{3} & \frac{1}{6} \\
+	0 & \frac{2}{3} & \frac{1}{6} & \frac{1}{6} \\
+	\frac{1}{2} & 0 & \frac{3}{8} & \frac{1}{8} \\
+	\frac{1}{4} &\frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
+\end{matrix}
+\right) 
+$$
 
 \begin{table}[htbp]
 	\renewcommand\arraystretch{1.5}
@@ -272,98 +262,26 @@ In addition, A long line of research links hot temperatures to individual aggres
 		\textbf{Hypothesis}&\textbf{$P_N$}&\textbf{$M_N$}\\
 		\whline
 		\textbf{$P_N$}&3 support &2 support, 1 none, 2 opposite\\
-		
+
 		\textbf{$M_N$}&2 support, 1 none, 2 opposite&4 support\\
-		
+
 		\textbf{$E_N$}&4 support, 1 none&1 support, 1 opposite\\
-		
+
 		\textbf{$S_N$}&1 support, 1 none&2 support, 1 none, 1 opposite\\
 		\shline
 		\textbf{Hypothesis}&\textbf{$E_N$}&\textbf{$S_N$}\\
 		\whline
 		\textbf{$P_N$}& 3 support, 1 none, 1 opposite & 1 support, 1 none\\
-		
+
 		\textbf{$M_N$}&1 support, 2 none&1 support, 1 none\\
-		
+
 		\textbf{$E_N$}&3 support&1 support, 2 none\\
-		
+
 		\textbf{$S_N$}&1 support, 2 none&1 support\\
 		\shline
 	\end{tabular}
 	\caption{Interplay of different factors - Quantitative study}\label{tab:Interplay of different factors - Quantitative study}
 \end{table}
-
-We apply quantitative analysis on the influence of climate change (\textbf{Table 3}) and interplay of other factors (\textbf{Table 4}), and attain matrix $K$ and $K_c$ as follows
-\begin{spacing}{1.5}
-	$$
-	K = 
-	\left(
-	\begin{matrix}
-	\frac{1}{2} & 0 & \frac{1}{3} & \frac{1}{6} \\
-	0 & \frac{2}{3} & \frac{1}{6} & \frac{1}{6} \\
-	\frac{1}{2} & 0 & \frac{3}{8} & \frac{1}{8} \\
-	\frac{1}{4} &\frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
-	\end{matrix}
-	\right) 
-	, \quad K_c = 
-	\left(
-	\begin{matrix}
-	\frac{1}{8} \\ {0} \\ \frac{1}{2} \\ \frac{1}{4}
-	\end{matrix}
-	\right) 
-	$$
-\end{spacing}
-Therefore, the final prediction function becomes
-\begin{spacing}{1.5}
-	\begin{equation}
-		\left(
-		\begin{matrix}
-		P_{N+1} \\ M_{N+1} \\ E_{N+1} \\ S_{N+1}
-		\end{matrix}
-		\right) 
-		= 
-		\left(
-		\begin{matrix}
-		\frac{1}{2} & 0 & \frac{1}{3} & \frac{1}{6} \\
-		0 & \frac{2}{3} & \frac{1}{6} & \frac{1}{6} \\
-		\frac{1}{2} & 0 & \frac{3}{8} & \frac{1}{8} \\
-		\frac{1}{4} &\frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
-		\end{matrix}
-		\right) 
-		\left(
-		\begin{matrix}
-		P_N \\ M_N \\ E_N \\ S_N
-		\end{matrix}
-		\right) 
-		+
-		\left(
-		\begin{matrix}
-		\frac{1}{8} \\ {0} \\ \frac{1}{2} \\ \frac{1}{4}
-		\end{matrix}
-		\right) 
-		C
-	\end{equation}
-\end{spacing}
-
-\begin{table}[htbp]
-	\renewcommand\arraystretch{1.5}
-	\footnotesize
-	\centering
-	\begin{tabular}{m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}|m{2cm}<{\centering}}
-		\whline
-		&\textbf{$P$}&\textbf{$M$}&\textbf{$E$}&\textbf{$S$}&\textbf{$F$}\\
-		\whline
-		\textbf{Italy}& 2.35 & 4.5 & 3.43 & 4.9 & 15.1833\\
-		
-		\textbf{China}& 7.1 & 5.9 & 5.53 & 5.8 & 24.33\\
-		
-		\textbf{Egypt}& 7.35 & 8.1 & 6.3 & 7.2 & 28.95\\
-
-		\shline
-	\end{tabular}
-	\caption{Fragility and factors of Italy, China, and Egypt}\label{tab:Fragility and factors of Italy, China, and Egypt}
-\end{table}
-
 
 \subsection{Current process analysis}
 As the additional screening is not always happening, we can assume the proportion of this unexpected case to be a certain small constant $\eta$. Since $\eta$ is small, every passenger who gets additional searching will not wait in Zone D, as a result, the change of flow can be approximatively ignored. If given the maximum of passenger flow $f_{max}$, the function to describe exit passengers' number is
@@ -627,7 +545,7 @@ We assumed that all kinds of disputes will be solved in five minutes, and if suc
 
 \begin{thebibliography}{99}
 \bibitem{1}\url{https://en.wikipedia.org/wiki/Fragile_state#Defining_fragile_states}
-\bibitem{2}Schwartz, P. and Randall, D. “An Abrupt Climate Change Scenario and Its Implications for United States National Security”, October 2003.
+\bibitem{2}Gan Y A, Tian F, Lee W Z, Lee M S, Chen B Z, Hu Y Q, Gu J F, Guo Y H, Qian S D. Operational research. Tsinghua University Press, 2005.
 \bibitem{3}Clara V. Marin, Colin G. Drury, Rajan Batta, Li Lin. Server Adaptation in an Airport Security System Queue[J].The OR Society, 2007, Vol.20:22-31.
 \bibitem{4}Zeng Junjie. Optimization and Configuration of Airport Security. Wide Angle, 2009:173-174.
 \bibitem{5}MI Kamien,NL Schwartz. Dynamic Optimization: The Calculus of Variations and Optimal Control in Economics \& Management.North Holland, 1981, 31(1):1252-1257.
@@ -753,28 +671,29 @@ H&Time to get scanned property	&Time it takes people from arriving at the belt t
 
 \section{Second appendix}
 Here are simulation programmes we used in our model as follow.
-\noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $f_{omax}$ and $N_L/N_P$}}
-\lstinputlisting[language=Matlab]{./code/fomax_NL_NP.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Find the zero point of the function $test$ }}
-\lstinputlisting[language=Matlab]{./code/drive_test.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Calculate $W_q$ for every specific $s$}}
-\lstinputlisting[language=Matlab]{./code/test.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when approaches to rounding $s$ are different}}
-\lstinputlisting[language=Matlab]{./code/s_lambda1.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when approaches to rounding $s$ are different}}
-\lstinputlisting[language=Matlab]{./code/Wq_lambda1.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when screening time is longer}}
-\lstinputlisting[language=Matlab]{./code/s_lambda2.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when screening time is longer}}
-\lstinputlisting[language=Matlab]{./code/Wq_lambda2.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when there are more passengers entering Zone D}}
-\lstinputlisting[language=Matlab]{./code/s_lambda3.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when there are more passengers entering Zone D}}
-\lstinputlisting[language=Matlab]{./code/Wq_lambda3.m}
-\noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $dW_q/dt-\lambda$ when there is one entrance paralyzed}}
-\lstinputlisting[language=Matlab]{./code/OneEntranceParalyzed.m}
-\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $dW_q/dt-\lambda$ when there are two entrances paralyzed }}
-\lstinputlisting[language=Matlab]{./code/TwoEntranceParalyzed.m}
+
+% \noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $f_{omax}$ and $N_L/N_P$}}
+% \lstinputlisting[language=Matlab]{./code/fomax_NL_NP.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Find the zero point of the function $test$ }}
+% \lstinputlisting[language=Matlab]{./code/drive_test.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Calculate $W_q$ for every specific $s$}}
+% \lstinputlisting[language=Matlab]{./code/test.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when approaches to rounding $s$ are different}}
+% \lstinputlisting[language=Matlab]{./code/s_lambda1.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when approaches to rounding $s$ are different}}
+% \lstinputlisting[language=Matlab]{./code/Wq_lambda1.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when screening time is longer}}
+% \lstinputlisting[language=Matlab]{./code/s_lambda2.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when screening time is longer}}
+% \lstinputlisting[language=Matlab]{./code/Wq_lambda2.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when there are more passengers entering Zone D}}
+% \lstinputlisting[language=Matlab]{./code/s_lambda3.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when there are more passengers entering Zone D}}
+% \lstinputlisting[language=Matlab]{./code/Wq_lambda3.m}
+% \noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $dW_q/dt-\lambda$ when there is one entrance paralyzed}}
+% \lstinputlisting[language=Matlab]{./code/OneEntranceParalyzed.m}
+% \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $dW_q/dt-\lambda$ when there are two entrances paralyzed }}
+% \lstinputlisting[language=Matlab]{./code/TwoEntranceParalyzed.m}
 \end{appendices}
 \end{document}
 

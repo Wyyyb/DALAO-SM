@@ -494,83 +494,79 @@
 	
 	So, the conclusion can be drawn: If government can still make right, positive decisions on economic and social policies, then the fragility might not get higher. If this country wants to be less fragile, its government should be very capable and outstanding on making right decisions, which might not be the case in most fragile countries.
 
-	\section{Sensitivity analysis on cultural diversity}
-	Since passengers from different areas have their own customs and norms, their behaviors are different, which could possibly influence our model. In this chapter, we analyze three representative types of passengers and how their cultural diversities impact our model. In the end, we demonstrate how our model accommodate these differences. 
-	\subsection{Entrances paralyzed due to cutting in lines}
-	Passengers from some areas have the concept of prioritizing individual efficiency, so the probability of cutting in lines may increase. Meanwhile, if the dispute caused by cutting in lines can not be solved in time, it may lead to the temporary paralysis of an entrance.
+	\section{Run model on the stable country}
+	\subsection{Refine model with more specific climate change}
+	In this chapter, we choose countries with high stability for data analysis, since such countries have dramatic difference with countries involved in the previous discussion. Furthermore, the choice of country will affect our choice of climate parameters. For example, if we choose landlocked countries, the impact of sea-level rise should not be a major factor.
 	
-	We assume that the number of lanes paralyzed obeys Poisson Distribution. Due to scarcity of concrete data, we assume that it obeys $\pi(0.01)$. We have
-	$$P(S_{paralyzed}=k)=\frac{e^{-0.01}(0.01)^k}{k!}$$
-	From the calculation we can attain that the probability of a entrance paralyzed is approximately 1\%, of two entrances paralyzed is about 0.005\%, and of more entrances paralyzed is almost 0. Assumptions above are appropriate for the time period of general passenger flow. Therefore, we analyze the sensitivity according to the situation that there are only one or two entrances paralyzed.
+	Select a specific N as iteration time. Assume each climate factor is $C_i$, the corresponding weight is $k_{c_i}$.  We iterate under the constraint condition that the fragility of a state does not increase. Therefore, we have the following equation
 	
-	Based on the previous optimization, we have already obtained that without the possibility of entrances paralyzed $W_q$ is about 20s, and no more than 40s .
+	$$
+	\Sigma k_{c_i} C_i \leq const
+	$$
+	
+	The weight assigned to each factor reflects the degree of influence of the corresponding climate factor on the fragility of a country.
+	
+	In practice, we select the Netherlands to calculate the impact of the climate. After researching on the national conditions in the Netherlands, we find that climate factors that have a major impact on the fragility of the Netherlands include: anomalies in temperature ($T$), anomalies in rainfall ($R$), sea-level rise ($L$) and natural disasters ($D$), which have significant influence on policy, military, economic and social factors. We can write the influence matrix and the vector of climate factor as follows:
+	
+	$$
+	\left(
+	\begin{matrix}
+	P_{N+1} \\ M_{N+1} \\ E_{N+1} \\ S_{N+1}
+	\end{matrix}
+	\right) 
+	= 
+	K 
+	\left(
+	\begin{matrix}
+	P_N \\ M_N \\ E_N \\ S_N
+	\end{matrix}
+	\right) 
+	+
+	K_c
+	\left(
+	\begin{matrix}
+	D \\ L \\ P \\ S \\
+	\end{matrix}
+	\right)
+	, \quad
+	K_c = 
+	\left(
+	\begin{matrix}
+		k_{c_{11}} & k_{c_{12}} & k_{c_{13}} & k_{c_{14}} \\
+		k_{c_{21}} & k_{c_{22}} & k_{c_{23}} & k_{c_{24}} \\
+		k_{c_{31}} & k_{c_{32}} & k_{c_{33}} & k_{c_{34}} \\
+		k_{c_{41}} & k_{c_{42}} & k_{c_{43}} & k_{c_{44}} \\
+	\end{matrix}
+	\right)
+	$$
 
-	From previous analysis, although the actual number of entrances is one less than the number we anticipate, it will result in the rapid increase of $W_q$. Assume that there is one entrance paralyzed, which means that passengers who are supposed to go through this entrance will wait in other entrances. The increase of other entrances should obey
-	$$\Delta L_q=\frac{\lambda\Delta t}{s(s-1)}$$
-	From what has been deduced before
-	$$s=\lceil\frac{\lambda}{\mu}-0.5\rceil+1$$
-	We have
-	$$\frac{dL_q}{dt}=\frac{\lambda}{\lceil\frac{\lambda}{\mu}-0.5\rceil(\lceil\frac{\lambda}{\mu}-0.5\rceil +1)}$$
+	\subsection{Run model on the Netherlands}
+	We select $N = 5$ as iteration time, and attain the equation that could satisfy the constrain condition:
+	$$
+	8.96D + 0.22E + 2.24L - 0.41M + 0.52P + 5.31R - 0.33S + 3.49T\leq0
+	$$
+	After assigning the data of the Netherlands in Fragile States Index data base, we can attain
+	$$
+	8.96D + 2.24L + 5.31R + 3.49T - 0.58\leq0
+	$$
+	The figure of this equation are as follows (\textbf{Figure 6})
+	
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=10cm]{figure9.png}
-		\caption{$\frac{dL_q}{dt}-\lambda$ when one entrance paralyzed} \label{fig:9}
-	\end{figure}\\
-	Under such rule, when there is one entrance paralyzed, the speed of increases of the number of passengers waiting in other entrances is shown in \textbf{Figure 9}. We assume that most of disputes will be solved in five minutes. From the figure we can estimate that the number of people increasing for every entrance is 3.9, and is at most 4, which is to say, $W_q$ at most will increase by 1.5 minutes with the probability of 1\%.
+		\includegraphics[width=15cm]{figure7.jpg}
+		\caption{Figure of Climate Equation} \label{fig:Figure of Climate Equation}
+	\end{figure}
 	
-	Similarly, when there are two entrances paralyzed, the speed of increases of the number of passengers for each entrances is
-	$$\frac{dL_q}{dt}=\frac{2\lambda}{\lceil\frac{\lambda}{\mu}-0.5\rceil(\lceil\frac{\lambda}{\mu}-0.5\rceil +1)}$$
-	If the flow of passengers is so little that the entrances open are less than two, the paralysis hardly happens. As a consequence, we omit the situation when $\lambda<0.1$ in the \textbf{Figure 10}.
-	\begin{figure}[h]
-		\small
-		\centering
-		\includegraphics[width=10cm]{figure10.png}
-		\caption{$\frac{dL_q}{dt}-\lambda$ when two entrances paralyzed} \label{fig:10}
-	\end{figure}
-	Under such situation, we also assume that a dispute can be solved in five minutes. Thus, the increasing number of passengers for each entrance is at most 12. Passengers can markedly feel the increase of passengers, but the waiting time for each individual still will increase no more than 5 minutes.
+	When the equation cannot be satisfied, which means the impact of climate change goes beyond the capacity of the Netherlands to regulate and control, the Netherlands will become more fragile within five years.
+	The tipping point is when the climate change in the Netherlands satisfies
+	$$
+	8.96D + 2.24L + 5.31R + 3.49T - 0.58 = 0
+	$$
 	
-	The sensitivity analysis above is based on the distribution $\pi(0.01)$. If such paralyzing happens in a large scale, we do not need such model to analyze it. From our analysis, we can draw the conclusion that the influence of $W_q$ due to cutting in queues is small. To be more specific, the time will increase no more than 5 minutes.
-
-	Passengers from different areas spend different time for security check. For instance, Egyptians and Jews are used to wearing kerchiefs while Americans are used to wearing simple jeans and T-shirt, which will absolutely result in different checking time.\\
-	Assume that in this case 
-	$$W_q'=1.2W_q$$ 
-	Then 
-	$$\mu'=\frac{1}{1.2}\mu=0.83\mu=0.0359$$ 
-	After calculation, the changed functional relationship is $s=\frac{\lambda }{0.0359}$. \textbf{Figure 11} shows $s-\lambda$, and \textbf{Figure 12} shows $W_q-\lambda$.
-	\begin{figure}[H]
-		\small
-		\centering
-		\includegraphics[width=15cm]{figure11.png}
-		\caption{$s-\lambda$ with longer screening time} \label{fig:11}
-	\end{figure}
-	\begin{figure}[h]
-		\small
-		\centering
-		\includegraphics[width=15cm]{figure12.png}
-		\caption{$W_q-\lambda$ with longer screening time} \label{fig:12}
-	\end{figure}
-	In this case, $\Delta W_q\leq \pm 24.0s$ when $W_q$ is constant (25s). Campared with the previous result $\Delta W_q\leq \pm 19.4s$, we can conclude that longer screening time due to different dressing has little impact on our model.
 	
-	Due to the culture discrepancies, passengers from different areas may have different understanding of definitions of contrabands. It is possible that some items are not allowed to take through the security checkpoint in some areas while such items can be safely carried in other areas. Furthermore, different countries have different norms of limited power of specific electronic equipments. Therefore, such discrepancies may lead to the increase of the probability of passengers from specific areas getting additional searching, which will decrease the efficiency of the whole system.
+	It can be seen that these climate factors have different effects on whether the equation can be satisfied, according to their coefficients in the equation. Natural disasters have the greatest influence. In another word, it is really difficult to completely avoid loss through various policies when serious natural disasters occur. In addition,  the sea-level rise has relatively less impact on the Netherlands. In practice, however, natural disasters in the Netherlands occur less frequently, while sea-level rise is a constant threat to the Netherlands due to the low elevation and can easily affect social stability by causing massive immigration and declining social order. So if we want to get a universal and complete evaluation of a country, we also need to investigate the various climate factors in the country and the frequency and duration of their occurrence.
 	
-	In the previous chapter, we assume that the proportion of passengers getting additional screening is a small constant $\eta$ whose influence on the whole system can be ignored. Now considering the influences of culture discrepancies, we assume that $\eta=0.02$ which is large enough to affect the throughput of passengers. Assume that the additional searching time also obey Exponential Distribution $E(\mu_D)$, and $\mu_D=\frac{1}{10}\mu_B$.
-	Then we have
-	$$\mu'=\frac{1}{\frac{\eta}{\mu_D}+\frac{1}{\mu_A}+\frac{1}{\mu_B}}=\frac{1}{\frac{10\eta}{\mu_B}+\frac{1}{\mu}}$$
-	Similarly, we show the relationship between $s-\lambda$ and $W_q-\lambda$ in \textbf{Figure 13} and \textbf{Figure 14}.
-	\begin{figure}[H]
-		\small
-		\centering
-		\includegraphics[width=15cm]{figure13.png}
-		\caption{$s-\lambda$ with more passengers in Zone D} \label{fig:13}
-	\end{figure}
-	\begin{figure}[H]
-		\small
-		\centering
-		\includegraphics[width=15cm]{figure14.png}
-		\caption{$W_q-\lambda$ with more passengers in Zone D} \label{fig:14}
-	\end{figure}
-	When $W_q=25s$, we can calculate $\Delta W_q’\leq\pm23.9$. Campared with the previous result $\Delta W_q\leq \pm 19.4s$, we can safely draw theconclusion that more passengers in Zone D due to obsure perceptions of contraband have little impact on our model.
 	\section{Policy and recommendations}
 	\begin{itemize}
 		\item Based on the model established primitively, the speed of document check is twice over that of screening, as a consequence, the screening process contributes most to the appearance of bottlenecks. Therefore, the airport should dispatch more skilled TSA officers to the screening area and expedite the speed of screening.
@@ -618,109 +614,7 @@
 		
 		\section{First appendix}
 		Here are data  about how passengers proceed through each step of the security screening process. \\
-		\begin{table}[htbp]
-			\centering
-			\begin{tabular}{m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}}
-				\toprule
-				\textbf{A}&\textbf{B}&\textbf{C}&\textbf{D}&\textbf{E}&\textbf{F}&\textbf{G}&\textbf{H}\\
-				\midrule					
-				00:00.&	00:00.&	00:08.&	00:15.&	00:09.&	00:03.&	00:00.&	0:48\\
-				00:11.&	00:09.&	00:05.&	00:12.&	00:20.&	00:06.&	00:02.&	0:45\\
-				00:13.&	00:10.&	00:11.&	00:15.&	00:33.&	00:07.&	00:03.&	0:28\\
-				00:14.&	00:11.&	00:10.&	00:20.&	00:36.&	00:09.&	00:11.&	0:25\\
-				00:15.&	00:13.&	00:09.&	00:08.&	00:43.&	00:20.&		&	0:22\\
-				00:25.&	00:14.&	00:09.&	00:08.&	00:52.&	00:22.&		&	0:24\\
-				00:34.&	00:16.&	00:13.&	00:11.&	01:05.&	00:25.&		&	0:17\\
-				00:54.&	00:27.&	00:15.&		&	01:16.&	00:41.&		&	0:33\\
-				00:56.&	00:57.&	00:12.&		&	01:25.&	01:07.&		&	0:08\\
-				01:15.&	01:21.&		&		&	01:32.&	01:09.&		&	0:10\\
-				01:16.&	02:16.&		&		&	01:43.&	01:18.&		&	0:26\\
-				01:44.&	02:24.&		&		&	01:58.&		&		&	0:32\\
-				01:49.&	02:27.&		&		&	02:09.&		&		&	0:21\\
-				02:04.&	02:43.&		&		&	02:26.&		&		&	0:37\\
-				02:26.&	02:44.&		&		&	02:40.&		&		&	1:08\\
-				
-				\bottomrule
-			\end{tabular}
-		\end{table}
-		\begin{table}[htbp]
-			\centering
-			\begin{tabular}{m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}m{1.3cm}<{\centering}}
-				\toprule
-				\textbf{A}&\textbf{B}&\textbf{C}&\textbf{D}&\textbf{E}&\textbf{F}&\textbf{G}&\textbf{H}\\
-				\midrule
-				02:54.&	03:06.&		&		&	02:47.&		&		&	0:40\\
-				02:58.&	03:13.&		&		&	02:54.&		&		&	0:18\\
-				02:59.&	03:15.&		&		&	03:06.&		&		&	0:26\\
-				03:01.&	03:27.&		&		&	03:25.&		&		&	0:08\\
-				03:06.&	03:29.&		&		&	03:34.&		&		&	0:21\\
-				03:09.&	04:27.&		&		&	04:11.&		&		&	0:23\\
-				03:10.&	04:42.&		&		&	04:22.&		&		&	0:28\\
-				03:20.&	04:48.&		&		&	04:35.&		&		&	0:50\\
-				03:22.&	05:00.&		&		&	04:47.&		&		&	0:28\\
-				03:34.&	05:09.&		&		&	05:00.&		&		&	0:48\\
-				03:53.&	05:40.&		&		&	05:11.&		&		&	0:28\\
-				04:17.&	05:57.&		&		&	05:18.&		&		&	0:36\\
-				04:35.&	06:00.&		&		&	05:26.&		&		&	0:27\\
-				04:36.&	06:20.&		&		&	05:41.&		&		&	0:05\\
-				04:37.&	07:39.&		&		&	05:48.&&&\\		
-				04:38.&	07:51.&		&		&	05:59.&&&\\			
-				05:06.&	08:01.&		&		&	06:09.&&&\\			
-				05:13.&	08:02.&		&		&	06:36.&&&\\			
-				05:37.&	08:04.&		&		&	06:45.&&&\\			
-				05:42.&	08:06.&		&		&	06:54.&&&\\		
-				05:46.&	08:18.&		&		&	07:05.&&&\\			
-				06:03.&	08:20.&		&		&	07:15.&&&\\			
-				06:06.&	08:21.&		&		&	07:24.&&&\\			
-				06:11.&	08:22.&		&		&	07:36.&&&\\			
-				06:46.&	08:33.&		&		&	07:43.&&&\\		
-				06:47.&	08:46.&&&&&&\\						
-				06:49.&	08:54.&&&&&&\\						
-				06:50.&	08:56.&&&&&&\\						
-				07:06.&	09:13.&&&&&&\\						
-				07:07.&	09:34.&&&&&&\\						
-				07:27.&	09:53.&&&&&&\\						
-				07:36.&	09:56.&&&&&&\\	
-				07:41.&&&&&&&\\							
-				07:41.&&&&&&&\\						
-				07:42.&&&&&&&\\							
-				07:47.&&&&&&&\\							
-				08:16.&&&&&&&\\							
-				08:23.&&&&&&&\\							
-				08:25.&&&&&&&\\							
-				08:26.&&&&&&&\\							
-				08:27.&&&&&&&\\							
-				08:43.&&&&&&&\\							
-				08:44.&&&&&&&\\							
-				\bottomrule
-			\end{tabular}
-		\end{table}
-		
-		\begin{table}[htbp]
-			\centering
-			\begin{tabular}{m{1.2cm}<{\centering}|m{3cm}<{\centering}|m{9cm}<{\centering}}
-				\whline
-				\textbf{Symbol}&\textbf{Process}&\textbf{Notes}\\
-				\hline 
-				A&TSA PreCheck Arrival Times&	Airport checkpoint recoding individuals entering the pre-check queue.\\
-				\hline 
-				B&Regular Arrival Times	&Airport checkpoint recoding individuals entering the regular queue.\\
-				\hline 
-				C&ID Check TSA officer 1	&The time the arrival of the passenger to the ID check station until the TSA officer calls the next passenger forward.\\
-				\hline 
-				D&ID Check TSA officer 2	&Same as column C, but for a different TSA officer.\\
-				\hline 
-				E&mm wave scan times	&Time stamps as passenger exited the milimeter wave scanner.\\
-				\hline 
-				F&X-Ray Scan Time 1	&Time stamps as bags exited the x-ray screening.\\
-				\hline 
-				G&X-Ray Scan Time 2	&Same as column F, but for a different TSA officer.\\
-				\hline  
-				H&Time to get scanned property	&Time it takes people from arriving at the belt to place items to be scanned, until they retrieved their items off the post-xray belt.\\
-				\shline
-			\end{tabular}
-		\end{table}
-		
+
 		
 		
 		
@@ -732,7 +626,7 @@
 		\section{Second appendix}
 		Here are simulation programmes we used in our model as follow.
 		\noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $f_{omax}$ and $N_L/N_P$}}
-%		\lstinputlisting[language=Matlab]{./code/fomax_NL_NP.m}
+		\lstinputlisting[language=Matlab]{./code/find_CARequal5.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Find the zero point of the function $test$ }}
 %		\lstinputlisting[language=Matlab]{./code/drive_test.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Calculate $W_q$ for every specific $s$}}

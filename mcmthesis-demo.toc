@@ -10,12 +10,13 @@
 \contentsline {section}{\numberline {4}Run model on the most fragile country}{9}{section.4}
 \contentsline {subsection}{\numberline {4.1}How climate change increase fragility}{9}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Ways to mitigate fragility}{10}{subsection.4.2}
-\contentsline {section}{\numberline {5}Sensitivity analysis on cultural diversity}{11}{section.5}
-\contentsline {subsection}{\numberline {5.1}Entrances paralyzed due to cutting in lines}{12}{subsection.5.1}
-\contentsline {section}{\numberline {6}Policy and recommendations}{16}{section.6}
-\contentsline {section}{\numberline {7}Strengths and weaknesses}{17}{section.7}
-\contentsline {subsection}{\numberline {7.1}Strengths}{17}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Weaknesses}{17}{subsection.7.2}
-\contentsline {section}{Appendices}{18}{section*.3}
-\contentsline {section}{Appendix \numberline {A}First appendix}{18}{Appendix.a.A}
-\contentsline {section}{Appendix \numberline {B}Second appendix}{19}{Appendix.a.B}
+\contentsline {section}{\numberline {5}Run model on the stable country}{11}{section.5}
+\contentsline {subsection}{\numberline {5.1}Refine model with more specific climate change}{11}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Run model on the Netherlands}{12}{subsection.5.2}
+\contentsline {section}{\numberline {6}Policy and recommendations}{13}{section.6}
+\contentsline {section}{\numberline {7}Strengths and weaknesses}{14}{section.7}
+\contentsline {subsection}{\numberline {7.1}Strengths}{14}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Weaknesses}{15}{subsection.7.2}
+\contentsline {section}{Appendices}{16}{section*.3}
+\contentsline {section}{Appendix \numberline {A}First appendix}{16}{Appendix.a.A}
+\contentsline {section}{Appendix \numberline {B}Second appendix}{16}{Appendix.a.B}

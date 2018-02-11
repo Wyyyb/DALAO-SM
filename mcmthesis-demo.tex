@@ -45,8 +45,8 @@
 	\newpage
 	\begin{center}
 		\tableofcontents
-		\setcounter{page}{0}
-		\thispagestyle{empty}
+		%\setcounter{page}{0}
+		%\thispagestyle{empty}
 	\end{center}
 	\newpage
 	
@@ -577,6 +577,13 @@
 	
 	According to four major climate factors, we mainly enumerate four policies, or driven interventions, to mitigate the risk of climate change. Interventions include artificial rainfall and building reservoirs ($P_w$), air conditioning subsidies ($P_a$), building dams ($P_d$), and monitoring and early warning of natural disasters ($P_m$).
 	
+	\begin{figure}[h]
+		\small
+		\centering
+		\includegraphics[width=16cm]{figure8.png}
+		\caption{Schema of refined model} \label{fig:Schema of refined model}
+	\end{figure}
+	
 	From what have been discussed, we modify our model as follows
 	  	\begin{spacing}{1.5}
 	  	$$
@@ -621,7 +628,7 @@
 	This function includes the effect of interventions on both climate change and country's economy. $K_p (P_w, P_a, P_d, P_m)^T$ is the effect of interventions on climate change, and $K_{pc} (P_w, P_a, P_d, P_m)^T$ is the cost of the interventions, which influences economy.
 	
 	\subsection{Estimation for Parameters and Calculation of Model}
-	In order to make the model clear, we use the capital investment required to implement the policy as the input for this policy, so $K_{pc}$ can be written as below
+	In order to make the model clear, we use the capital investment required to implement the policy as the input for this policy, which means $P_w, P_a, P_d, P_m$ are cost of each policy, so $K_{pc}$ can be written as below
 	$$
 	K_{pc} = 
 	\left(
@@ -670,23 +677,29 @@
 	$$
 	Cost = P_w + P_a + P_d + P_m
 	$$
-	What we give is a universal approach to calculate and predict the cost. However, the actual cost of each intervention depends on specific geographical location and local economic condition of the country.
+	What we give is a universal approach to calculate and predict the cost. However, the actual amount of the cost of each intervention depends on specific geographical location and local economic condition of the country, which means the cost of same policy may vary greatly in different country. Here we give a brief estimation of each policy based on the data accessible.
+	
+	Artificial rainfall using rockets is relatively cheap, and it requires rocket launchers and rockets. Each rocket launcher with towing trucks, need about 25,000\$, and each rocket needs about 400\$ as well as 200\$ for silver iodide flame shells. Transportation fees, escort fees, custodian fees and launch fees are also a huge cost of money. However, in addition to the equipment cost, weather conditions for making artificial rain need to be considered. In this case, it is necessary to launch a sounding balloon, and personnel should conduct data analysis on them. Therefore, an artificial rainfall needs about 30,000\$ - 50,000\$.
+	
+	Air conditioning subsidies relates to the population of the country. In China, each family may attain 30\$ to 60\$ per month.
+	
+	The cost of building dams includes cost of projects and facilities, and cost of land requisition and resettlement, which is greatly influenced by the local geography and geology conditions. According to the statistical analysis of the investment budget of several medium-sized dams in Chongqing, China, the total investment is estimated to be between 650,000\$ and 850,000\$, accounting for 70\% -35\% of the project costs and 30\% -65\% of the environmental costs of land acquisition and resettlement.
+	
+	Since different natural disasters requires different specialized monitoring and early warning system, the cost may be significantly different. Take earthquake as an example. According to the estimation from U.S. Geological Survey (USGS) in 2014, to build an earthquake early warning system covering the entire west coast of the United States, capital investment costs will reach 383,000,000\$ and annual maintenance and operational costs will be 161,000,000\$.
   
-	\section{Strengths and weaknesses}
-	\subsection{Strengths}
-	\begin{itemize}
-		\item Our model separates the whole process of security check into ID-check part and screening part, and independently calculates the corresponding queuing conditions, which avoid the possible errors due to the complicated model.
-		\item We estimate the arrival rate for each passenger and the checking time for each TSA officer, and assume that the former obeys Poisson Distribution and the latter obeys Exponential Distribution, which conform to the general principles.
-		\item We apply the moment estimation to estimate relevant parameters of the system so as to obtain the basic model.
-		\item We apply the Queuing Theory, and consider the average waiting time and the flow of passengers as our principal evaluation indexes, which correspond with profits of airports and passengers.
-		\item When analyzing the sensitivity and improving the current model, we consider the difference of average waiting time and the maximal flow of passengers as our principal evaluation indexes, which guarantee that the airport can provide every passengers with the approximately same service with the maximal efficiency.
-	\end{itemize}
-	\subsection{Weaknesses}
-	\begin{itemize}
-		\item Since we do not have enough data, we have to estimate related parameters using moment estimation of data given. The error can be large when the data size is small.
-		\item The bound between service time and waiting time is not explicit enough. We assume that when passengers put their baggage on the belt, they finish waiting and service time begins, but actually perhaps passengers consider the time between the moment they put down their baggage and the moment they receive body screening is also the waiting time.\item Since we have less estimation of costs and utilization of space, our model considers efficiency and flying experience of passengers as the principal indexes. In fact, we should modify our model according to actual costs of airport construction.
-		\item We did not take the scale of the airport into account, and modeling based on the given data. If the scale of the airport is large enough, we need to rewrite some of our codes to obtain a more graceful result.
-	\end{itemize}
+	\section{Model Adaptation}
+	\subsection{Smaller States}
+	In the previous chapters, our model argues that external interventions have far less impact on policy, military, economic and social factors than domestic interventions. However, when the scope of the model is narrowed down to the size of a city, we think that the impact of external interventions will increase substantially and can not be ignored in the calculation. For example, when the earthquake disaster in a city usually receives the attention and help from the whole country, for a small state, the economic, policy and military aid input from the outside world can make up for the losses caused by the earthquake.
+	
+	In addition, we think the policy implementation in the smaller regions is more convenient and the weight of the influence of the policy will also increase, so the weight of the policy influence in the iteration matrix of the Markov model in chapter 3 should be increased.
+	
+	For a large country, there are more climate factors to consider. However, for a small city, there are often relatively stable climate factors. For example, in the earthquake-prone zone, more attention should be paid to the impact of natural disasters. Other factors such as temperature may be neglected.
+	
+	\subsection{Larger States}
+	For larger regions, external inputs are usually smaller than individual countries and can therefore be ignored. Here we consider a certain continent to modify the model. The fragility of one continent should be affected by all the countries in the continent and the weights of influence of different countries are not the same. Countries with higher fragility have a greater impact on the fragility of the continent as a whole. For example, such countries may bring more local conflicts, refugees and other factors that increase fragility of the continent. So we use the root mean square of all countries in this continent to represent the fragility of the entire continent.
+	$$
+	F = \sqrt{\frac{\Sigma_{i=1}^n F_i^2}{n}}
+	$$
 	
 	\begin{thebibliography}{99}
 		\bibitem{1}\url{https://en.wikipedia.org/wiki/Fragile_state#Defining_fragile_states}

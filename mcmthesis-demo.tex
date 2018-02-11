@@ -20,20 +20,20 @@
 		\global\arrayrulewidth 1.2pt}%
 	\hline
 	\noalign{\global\arrayrulewidth\savewidth}}
-\title{Climate Change and Regional Fragility}
+\title{Climate Change, Regional Fragility Variation and Human Intervention}
 \author{}
 \date{}
 \begin{document}
 	\begin{abstract}
-		How to define a country’s fragility? This might be a problem without accurate solution. However, we can focus on several specially appointed issues, for example, the fragility variation caused by climate change, which is a significant threat for most countries. In this paper, we are going to analyze several major factors that might have relationship with this special phenomenon.
+		To define a country's \textbf{fragility}, we can focus on several specific issues. In this paper, we are going to analyze the relationship between climate change and regional fragility.
 		
-		First, we establish a model without climate change to see the trend of a country’s fragility in a few years. This model must be clear, for which we use the logic of Principal Component Analysis and come up with some influence factors that occur in most countries. We assume the fragility to obey Markov Chain if there are no climate influences and external interventions. Then according to the specific problem been discussed, the model is modified with climate change and other detailed factors. Then we run our model on three countries which are respectively accepted as stable, vulnerable and fragile to settle the evaluation standard.
+		First, we establish a model without climate change to see the trend of a country’s fragility in a few years. Using the logic of \textbf{Principal Component Analysis}, we come up with some influence factors that occur in most countries. We assume the fragility to obey \textbf{Markov Chain} if there are no climate influences and external interventions. Then we modify the model with climate change and other detailed factors. After that, we run our model on three countries which are respectively accepted as stable, vulnerable and fragile to set the evaluation standard.
 		
 		Second, we plan to run the model on a country at the edge of breakdown. Central African Republic ranks third on Fragile States Index database and is currently affected by climate change. We iterate our model to predict the fragility of Central African Republic in several years, and separately give random climate change and harmful climate change to see the trends.
 		
-		Third, our attention is focused on a country which is rather stable: the Netherland. We refine our model with more specific climate change in this country, use Fixed Point Iteration to find the most severe climate change which is on the edge of pushing this country to more a fragile status. We can then obtain the climate change types that influence the Netherland most from the calculation. After this, we specify the policies their government can implements, and make more detailed modifications on our prediction model to calculate the efficiency of these policies. The government should make special efforts on the most effective policy.
+		Third, our attention is focused on a country which is rather stable: the Netherlands. We refine our model with more specific climate change in this country, use \textbf{Fixed Point Iteration} to find the tipping point, and obtain the climate change types that influence the Netherlands most from the calculation. After this, we specify the policies their government can implement, and make more detailed modifications on our prediction model to calculate the efficiency of these policies. The government should make special efforts on the most effective policy.
 		
-		Finally, we do the universality analysis of our model, finding that for smaller “states” and larger “states”, there should be some small modification as well. The core of this model remains  the same, so if we want to run this model on other situations, there should be some background study initially.		
+		Finally, we do the universality analysis of our model, finding that for smaller “states” and larger “states”, there should be some small modification as well. The core of this model remains the same, so if we want to run this model on other situations, there should be some background study initially.		
 		
 		\begin{keywords}
 			Climate change; Fragility analysis; Principal Component Analysis; Markov Chain; Fixed Point Iteration
@@ -346,7 +346,7 @@
 	
 	\subsection{Obtain fragility standard}
 	It makes no sense to draw up standards out of an imaginary country, so we choose to investigate several countries which are widely accepted as stable, vulnerable and fragile.
-	We respectively define Egypt, China and Italy to be fragile, vulnerable and stable, then we do research in Fragile States Index database(see the appendix) to calculate the policy factor, military factor, economy factor and social factor. Our factors are gained by 
+	We respectively define Egypt, China and Italy to be fragile, vulnerable and stable, then we do research in Fragile States Index database[3] to calculate the policy factor, military factor, economy factor and social factor. Our factors are gained by 
 	\begin{spacing}{1.5}
 		\begin{equation}
 		\begin{aligned}
@@ -409,7 +409,7 @@
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=14cm]{figure3.jpg}
+		\includegraphics[width=12cm]{figure3.jpg}
 		\caption{Fragility-Year Graph with random climate change} \label{fig:Fragility-Year with random climate change}
 	\end{figure}
 
@@ -417,7 +417,7 @@
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=13cm]{figure4.jpg}
+		\includegraphics[width=12cm]{figure4.jpg}
 		\caption{Fragility-Year Graph with negative climate change} \label{fig:Fragility-Year with random climate change}
 	\end{figure}
 	
@@ -717,41 +717,40 @@
 		In this paper, we develop a model to determine a country's fragility and measure the impact of climate change. We extract four major factors, which are factors of policy, military, economy, and society, to quantitatively measure a state's degree of fragility. Such factors in a year will be determined by last year's factors and will be affected by climate change as well as external interventions, which is a modified Markov process. 
 		
 		After that, we run our model on a fragile country, Central African Republic, to show how climate change will impact the fragility of country and find that making correct policies is the approach to decrease its fragility. Furthermore, we run our model on a stable country, the Netherlands, and with the thought of PCA, we refine our model by separating climate change into four specific aspects:  anomalies in temperature, anomalies in rainfall, sea-level rise and natural disasters. We attain a equation between four climate factors and four major factors to decide whether a country may become fragile. In addition, we come up with four policies or driven interventions to mitigate the risk of climate and estimate their cost respectively. Finally, we further modify our model so as to adapt to smaller and larger states.
+		
+		\newpage
 	
 	\begin{thebibliography}{99}
 		\bibitem{1}\url{https://en.wikipedia.org/wiki/Fragile_state#Defining_fragile_states}
-		\bibitem{2}Schwartz, P. and Randall, D. “An Abrupt Climate Change Scenario and Its Implications for United States National Security”, October 2003.
-		\bibitem{3}Clara V. Marin, Colin G. Drury, Rajan Batta, Li Lin. Server Adaptation in an Airport Security System Queue[J].The OR Society, 2007, Vol.20:22-31.
-		\bibitem{4}Zeng Junjie. Optimization and Configuration of Airport Security. Wide Angle, 2009:173-174.
-		\bibitem{5}MI Kamien,NL Schwartz. Dynamic Optimization: The Calculus of Variations and Optimal Control in Economics \& Management.North Holland, 1981, 31(1):1252-1257.
-		\bibitem{6}Zhang Guofen, Huang B Q, Zhang C Y. Probability Theory, Mathematical Statistics and Stochastic Process. Zhejiang University Press, 2011.
-		\bibitem{7}Ivo Adan, Jacques Resing. Queueing Systems.Department of Mathematics and Computing Science Eindhoven University of Technology, P.O. Box 513, 5600 MB Eindhoven, The Netherlands, 2015.
-		\bibitem{8}Queueing theory (https://en.wikipedia.org/wiki/Queueing\_theory).
+		\bibitem{2} Schwartz, P. and Randall, D. “An Abrupt Climate Change Scenario and Its Implications for United States National Security”, October 2003.
+		\bibitem{3} Fragile State Index \url{http://fundforpeace.org/fsi/data/}
+		\bibitem{4} Gagniuc, Paul A. Markov Chains: From Theory to Implementation and Experimentation. USA, NJ: John Wiley \& Sons, 2017.
+		\bibitem{5} Krakowka, A.R., Heimel, N., and Galgano, F. “Modeling Environmenal Security in Sub-Sharan Africa – ProQuest.” The Geographical Bulletin, 2012, 53 (1): 21-38.
+		\bibitem{6} Theisen, O.M., Gleditsch, N.P., and Buhaug, H. “Is climate change a driver of armed conflict?” Climate Change, April 2013, V117 (3), 613-625.
 	\end{thebibliography}
 	
 	\begin{appendices}
 		
 		Here are simulation programmes we used in our model as follow.
-		\noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $f_{omax}$ and $N_L/N_P$}}
 		\lstinputlisting[language=Matlab]{./code/find_CARequal5.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Find the zero point of the function $test$ }}
-%		\lstinputlisting[language=Matlab]{./code/drive_test.m}
+		\lstinputlisting[language=Matlab]{./code/cal_PMES.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Calculate $W_q$ for every specific $s$}}
-%		\lstinputlisting[language=Matlab]{./code/test.m}
+		\lstinputlisting[language=Matlab]{./code/CAR.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when approaches to rounding $s$ are different}}
-%		\lstinputlisting[language=Matlab]{./code/s_lambda1.m}
+		\lstinputlisting[language=Matlab]{./code/climate.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when approaches to rounding $s$ are different}}
-%		\lstinputlisting[language=Matlab]{./code/Wq_lambda1.m}
+		\lstinputlisting[language=Matlab]{./code/Draw4d.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when screening time is longer}}
-%		\lstinputlisting[language=Matlab]{./code/s_lambda2.m}
+		\lstinputlisting[language=Matlab]{./code/CAR_5equal.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when screening time is longer}}
-%		\lstinputlisting[language=Matlab]{./code/Wq_lambda2.m}
+		\lstinputlisting[language=Matlab]{./code/Netherlands_1equal.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $s$ and $\lambda$ when there are more passengers entering Zone D}}
-%		\lstinputlisting[language=Matlab]{./code/s_lambda3.m}
+		\lstinputlisting[language=Matlab]{./code/Netherlands_1equal_PMES.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw figures of $W_q$ and $\lambda$ when there are more passengers entering Zone D}}
-%		\lstinputlisting[language=Matlab]{./code/Wq_lambda3.m}
+		\lstinputlisting[language=Matlab]{./code/Netherlands_5equal.m}
 %		\noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $dW_q/dt-\lambda$ when there is one entrance paralyzed}}
-%		\lstinputlisting[language=Matlab]{./code/OneEntranceParalyzed.m}
+		\lstinputlisting[language=Matlab]{./code/Netherlands_5equal_PMES.m}
 %		\textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $dW_q/dt-\lambda$ when there are two entrances paralyzed }}
 %		\lstinputlisting[language=Matlab]{./code/TwoEntranceParalyzed.m}
 	\end{appendices}

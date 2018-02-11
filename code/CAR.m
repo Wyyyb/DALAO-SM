@@ -42,5 +42,6 @@ axis([1 year 37 39]);
 hold off
 xlabel('year');
 ylabel('fragility');
-legend([p1(1), p2(2), p3(3)],'without climate change influence','add indirect influence','add direct influence');
+legend([p1(1), p2(2), p3(3)],'without climate change influence',
+'add indirect influence','add direct influence');
 

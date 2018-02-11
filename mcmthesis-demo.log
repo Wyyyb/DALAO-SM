@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.30)  11 FEB 2018 21:11
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.30)  11 FEB 2018 21:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -739,7 +739,6 @@ LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ppl/b/n' tried instead on input line 42.
 Missing character: There is no ’ in font pplr8t!
-Missing character: There is no ’ in font pplr8t!
 Missing character: There is no “ in font pplr8t!
 Missing character: There is no ” in font pplr8t!
 Missing character: There is no “ in font pplr8t!
@@ -751,12 +750,12 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 ) [1
 
 ]
-[2]
 \tf@toc=\write5
 \openout5 = `mcmthesis-demo.toc'.
 
 LaTeX Font Info:    Try loading font information for T1+phv on input line 52.
- (c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1phv.fd
+
+(c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 
@@ -870,6 +869,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [9]
 File: ./figures/figure5.jpg Graphic file (type QTm)
  <use  "./figures/figure5.jpg" >
+Missing character: There is no ’ in font pplr8t!
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -877,7 +878,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10]
-Missing character: There is no ’ in font pplr8t!
 File: ./figures/figure6.jpg Graphic file (type QTm)
  <use  "./figures/figure6.jpg" >
 
@@ -887,6 +887,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
+File: ./figures/figure7.jpg Graphic file (type QTm)
+ <use  "./figures/figure7.jpg" >
+Overfull \hbox (31.18375pt too wide) in paragraph at lines 555--556
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -894,12 +903,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [12]
-File: ./figures/figure7.jpg Graphic file (type QTm)
- <use  "./figures/figure7.jpg" >
-Overfull \hbox (31.18375pt too wide) in paragraph at lines 555--556
- [][] 
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -912,9 +915,6 @@ File: ./figures/figure8.png Graphic file (type QTm)
 Overfull \hbox (2.731pt too wide) in paragraph at lines 577--578
  [][] 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -962,13 +962,6 @@ er-
 
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <14.4> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 708.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[18]
 Missing character: There is no ’ in font pplr8t!
 Missing character: There is no ’ in font pplr8t!
 
@@ -985,18 +978,15 @@ re and
  []
 
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18]
 Overfull \hbox (9.4417pt too wide) in paragraph at lines 712--713
 \T1/ppl/m/n/14.4 and ef-fort be-tween coun-tries, all ex-ter-nal in-ter-ven-tio
 ns were
- []
-
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 722.
-(c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
-[][]$\T1/pcr/m/n/12 https : / / en . wikipedia . org / wiki / Fragile _ state #
- Defining _
  []
 
 
@@ -1006,11 +996,109 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [19]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 724.
+ (c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
+[][]$\T1/pcr/m/n/12 https : / / en . wikipedia . org / wiki / Fragile _ state #
+ Defining _
+ []
+
 Missing character: There is no “ in font pplr8t!
 Missing character: There is no ” in font pplr8t!
- (./code/find_CARequal5.m
+Missing character: There is no “ in font pplr8t!
+Missing character: There is no – in font pplr8t!
+Missing character: There is no ” in font pplr8t!
+Missing character: There is no “ in font pplr8t!
+Missing character: There is no ” in font pplr8t!
+(./code/find_CARequal5.m
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 7.
+) (./code/cal_PMES.m
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]) (./code/CAR.m
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21]) (./code/climate.m)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22] (./code/Draw4d.m
+Overfull \hbox (1.944pt too wide) in paragraph at lines 10--11
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 11--12
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 12--13
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (25.94424pt too wide) in paragraph at lines 28--29
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 30--31
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 31--32
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 32--33
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (25.94424pt too wide) in paragraph at lines 47--48
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 49--50
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 50--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 51--52
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1018,7 +1106,45 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20]) 
+[23]
+Overfull \hbox (25.94424pt too wide) in paragraph at lines 70--71
+[][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 72--73
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 73--74
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.944pt too wide) in paragraph at lines 74--75
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+) (./code/CAR_5equal.m
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24]) (./code/Netherlands_1equal.m) (./code/Netherlands_1equal_PMES.m)
+(./code/Netherlands_5equal.m
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]) (./code/Netherlands_5equal_PMES.m) 
 AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1026,24 +1152,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 758.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 758.
+[26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 757.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 757.
  (./mcmthesis-demo.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 758.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 758.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 757.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 757.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14568 strings out of 493005
- 200327 string characters out of 6137956
- 370707 words of memory out of 5000000
- 18243 multiletter control sequences out of 15000+600000
+ 14643 strings out of 493005
+ 201210 string characters out of 6137956
+ 399549 words of memory out of 5000000
+ 18291 multiletter control sequences out of 15000+600000
  34868 words of font info for 92 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 41i,14n,75p,894b,2383s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,75p,894b,1823s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mcmthesis-demo.pdf (23 pages).
+Output written on mcmthesis-demo.pdf (27 pages).

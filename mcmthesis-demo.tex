@@ -205,6 +205,7 @@
 	+
 	K_c
 	C
+	+ X
 	, \quad
 	K_c = 
 	\left(
@@ -345,6 +346,7 @@
 		\end{matrix}
 		\right) 
 		C
+		+ X
 		\end{equation}
 	\end{spacing}	
 	
@@ -506,8 +508,8 @@
 	
 	The weight assigned to each factor reflects the degree of influence of the corresponding climate factor on the fragility of a country.
 	
-	In practice, we select the Netherlands to calculate the impact of the climate. After researching on the national conditions in the Netherlands, we find that climate factors that have a major impact on the fragility of the Netherlands include: anomalies in temperature ($T$), anomalies in rainfall ($R$), sea-level rise ($L$) and natural disasters ($D$), which have significant influence on policy, military, economic and social factors. We can write the influence matrix and the vector of climate factor as follows:
-	
+	In practice, we select the Netherlands to calculate the impact of the climate. After researching on the national conditions in the Netherlands, we find that climate factors that have a major impact on the fragility of the Netherlands include: anomalies in temperature ($T$), anomalies in rainfall ($R$), sea-level rise ($L$) and natural disasters ($D$), which have significant influence on policy, military, economic and social factors. After assigning proper weights, we can write the influence matrix and the vector of climate factor as follows:
+	\begin{spacing}{1.5}
 	$$
 	\left(
 	\begin{matrix}
@@ -525,20 +527,22 @@
 	K_c
 	\left(
 	\begin{matrix}
-	D \\ L \\ P \\ S \\
+	T \\ R \\ L \\ D \\
 	\end{matrix}
 	\right)
+	+ X
 	, \quad
 	K_c = 
 	\left(
 	\begin{matrix}
-		k_{c_{11}} & k_{c_{12}} & k_{c_{13}} & k_{c_{14}} \\
-		k_{c_{21}} & k_{c_{22}} & k_{c_{23}} & k_{c_{24}} \\
-		k_{c_{31}} & k_{c_{32}} & k_{c_{33}} & k_{c_{34}} \\
-		k_{c_{41}} & k_{c_{42}} & k_{c_{43}} & k_{c_{44}} \\
+		\frac{1}{8} & \frac{1}{4} & \frac{1}{8} & \frac{1}{2} \\
+		0 & \frac{1}{4} & 0 & \frac{3}{4} \\
+		\frac{1}{4} & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
+		\frac{1}{3} & \frac{1}{3} & 0 & \frac{1}{3} \\
 	\end{matrix}
 	\right)
 	$$
+	\end{spacing}
 
 	\subsection{Run model on the Netherlands}
 	We select $N = 5$ as iteration time, and attain the equation that could satisfy the constrain condition:
@@ -549,7 +553,7 @@
 	$$
 	8.96D + 2.24L + 5.31R + 3.49T - 0.58\leq0
 	$$
-	The figures of this equation are shown in \textbf{Figure 6}.
+	Figures of this equation are shown in \textbf{Figure 6}. From the figures, we can observe the relations between $D,T,R,L$ clearly and intuitively.
 	
 	\begin{figure}[h]
 		\small
@@ -567,22 +571,107 @@
 	
 	It can be seen that these climate factors have different effects on whether the equation can be satisfied, according to their coefficients in the equation. Natural disasters have the greatest influence. In another word, it is really difficult to completely avoid loss through various policies when serious natural disasters occur. In addition,  the sea-level rise has relatively less impact on the Netherlands. In practice, however, natural disasters in the Netherlands occur less frequently, while sea-level rise is a constant threat to the Netherlands due to the low elevation and can easily affect social stability by causing massive immigration and declining social order. So if we want to get a universal and complete evaluation of a country, we also need to investigate the various climate factors in the country and the frequency and duration of their occurrence.
 	
-	\section{Policy and recommendations}
-	\begin{itemize}
-		\item Based on the model established primitively, the speed of document check is twice over that of screening, as a consequence, the screening process contributes most to the appearance of bottlenecks. Therefore, the airport should dispatch more skilled TSA officers to the screening area and expedite the speed of screening.
-		\item Rationally arrange the number of entrances and lanes. From the optimization we have made, the best arrangement is shown below
-		$$N_X:N_B=2:1$$
-		$$\lambda_P:\lambda_R=3:2$$
-		$$N_X=1.2(N_P+N_R)$$
-		\item Monitor the flow of passengers in real time, and arrange the number of entrances according to the acquired values in order to reduce the cost on the basis of rational efficiency. The optimal result we obtain according to data we have is
-		$$s=\lceil\frac{\lambda}{\mu}-0.5\rceil+1$$
-		\item Arrange different number of TSA officers and security staffs in different security checkpoints in order to adjust the average waiting time of passengers. For instance, in the checkpoints with more queue-jumpers, we should arrange more staffs to insure that disputes caused by cutting will not continue for a long period. In the sensitivity analysis, the increasing velocity of queues satisfy that
-		$$\frac{dL_q}{dt}=\frac{\lambda s_{paralyzed}}{s(s-s_{paralyzed})}$$
-		We assumed that all kinds of disputes will be solved in five minutes, and if such time increases, the queue will be so long that passengers may suffer from anxiety.
-		\item Promote Pre-Check service, and increase the number of Pre-Check entrances, which will provide convenience to passengers and save the checking time. It is mentioned that 45\% of passengers enroll in Pre-Check, but since Pre-Check passengers tend to travel more frequently by plane, such proportion cannot be the criterion when deciding the number of Pre-Check entrances and regular entrances.
-		\item Establish a baggage buffer that used to temporarily store the baggage that has been checked. Since in our optimization each lane for body screening is accompanied with two lanes for baggage screening, which will increase the probability of baggage checked faster than passengers, such buffer can prevent the occurrence of congestion and improve the security level of baggage.
-		\item In the sensitivity analysis, we find that culture discrepancies will not impact greatly the queuing time, and the existing congestion mainly due to the insufficiency of entrances. Therefore, we propose that if cost permitting, the airport should open more entrances and disperse entrances as much as possible in order to disperse passengers, which will relief the anxiety of them.
-	\end{itemize}
+	\section{Impact of Driven Interventions on Fragility}
+	\subsection{Refine the Model}
+	In this chapter, we continue to use the Netherlands as an example to build our model. Impact of major climate factors in the Netherlands, which are Anomalies in temperature ($T$), anomalies in rainfall ($R$), sea-level rise ($L$) and natural disasters ($D$) can all be remedied through specific policies. If the government investment in coping with climate change is not sufficient, climate change will cause an enormous influence on the fragility of the country; however, if government invest too much in it, economy of the country could be affected. We should find a tradeoff between cost of policies and impact of climate change. 
+	
+	According to four major climate factors, we mainly enumerate four policies, or driven interventions, to mitigate the risk of climate change. Interventions include artificial rainfall and building reservoirs ($P_w$), air conditioning subsidies ($P_a$), building dams ($P_d$), and monitoring and early warning of natural disasters ($P_m$).
+	
+	From what have been discussed, we modify our model as follows
+	  	\begin{spacing}{1.5}
+	  	$$
+	  	\left(
+	  	\begin{matrix}
+	  	P_{N+1} \\ M_{N+1} \\ E_{N+1} \\ S_{N+1}
+	  	\end{matrix}
+	  	\right) 
+	  	= 
+	  	K 
+	  	\left(
+	  	\begin{matrix}
+	  	P_N \\ M_N \\ E_N \\ S_N
+	  	\end{matrix}
+	  	\right) 
+	  	+
+	  	K_c
+	  	\left(
+	  	\left(
+	  	\begin{matrix}
+	  	T \\ R \\ L \\ D \\
+	  	\end{matrix}
+	  	\right)
+	  	+ 
+	  	K_p
+	  	\left(
+	  	\begin{matrix}
+	  	P_w \\ P_a \\ P_d \\ P_m \\
+	  	\end{matrix}
+	  	\right)
+	  	\right)
+	  	+
+	  	K_{pc}
+	  	\left(
+	  	\begin{matrix}
+	  	P_w \\ P_a \\ P_d \\ P_m \\
+	  	\end{matrix}
+	  	\right)
+	  	+ X
+	  	$$
+	  \end{spacing}
+	This function includes the effect of interventions on both climate change and country's economy. $K_p (P_w, P_a, P_d, P_m)^T$ is the effect of interventions on climate change, and $K_{pc} (P_w, P_a, P_d, P_m)^T$ is the cost of the interventions, which influences economy.
+	
+	\subsection{Estimation for Parameters and Calculation of Model}
+	In order to make the model clear, we use the capital investment required to implement the policy as the input for this policy, so $K_{pc}$ can be written as below
+	$$
+	K_{pc} = 
+	\left(
+	\begin{matrix}
+		0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 \\
+		1 & 1 & 1 & 1 \\
+		0 & 0 & 0 & 0 \\
+	\end{matrix}
+	\right)
+	$$
+	We estimate each policy's effect on alleviating the risk of climate change with the same cost. So we can attain $K_p$ as follows
+	\begin{spacing}{1.5}
+		$$
+		K_{pc}=
+		\left(
+		\begin{matrix}
+		-\frac{1}{3} & -\frac{2}{3} & 0 & 0 \\
+		-1 & 0 & 0 & 0 \\
+		0 & 0 & -1 & 0 \\
+		-\frac{1}{6} & -\frac{1}{6} & -\frac{1}{6} & -\frac{1}{2} \\
+		\end{matrix}
+		\right)
+		$$
+	\end{spacing}
+	As the impact of human intervention policies is usually short, we reduce the iteration time to one year. The iteration result is
+	$$
+	1.833D + 0.125E + 0.375L - 0.083M + 0.250P + 1.083R - 0.292S 
+	$$
+	$$
+	 + 0.708T + 0.222Pa + 0.319Pd + 0.083Pm - 0.625Pw \leq 0
+	$$
+	Similar to the previous analysis, if the equation above is satisfied, the fragility of the state will not be increased, which means such interventions can prevent a country from becoming a fragile state.
+	
+	We use data of the Netherlands in 2017 from Fragile States Index data base to calculate, and obtain the following equation
+	$$
+	1.833D + 0.375L + 1.083R + 0.708T
+	$$
+	$$
+	 + 0.222Pa + 0.319Pd + 0.083Pm - 0.625Pw \leq 0
+	$$
+	With the equation above, we can plan for the expenditure that the policy leads to. If we simply consider that we should not increase the fragility of a state, we should invest a larger proportion of the heavily weighted policies to minimize the total cost on the policies. In reality, more factors need to be considered. We can not ignore the impact of other climate factors. We should also invest enough funds for them.
+	
+	\subsection{Total Cost}
+	The total cost of interventions for the country is the sum of $P_w, P_a, P_d$ and $P_m$.
+	$$
+	Cost = P_w + P_a + P_d + P_m
+	$$
+	What we give is a universal approach to calculate and predict the cost. However, the actual cost of each intervention depends on specific geographical location and local economic condition of the country.
+  
 	\section{Strengths and weaknesses}
 	\subsection{Strengths}
 	\begin{itemize}

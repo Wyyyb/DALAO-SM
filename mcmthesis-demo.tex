@@ -8,6 +8,7 @@
 \usepackage{etoc}
 \usepackage{array}
 \usepackage{setspace}
+\usepackage{titletoc}
 \newcolumntype{I}{!{\vrule width 3pt}}
 \newlength\savedwidth
 \newcommand\whline{\noalign{\global\savedwidth\arrayrulewidth
@@ -19,28 +20,28 @@
 		\global\arrayrulewidth 1.2pt}%
 	\hline
 	\noalign{\global\arrayrulewidth\savewidth}}
-\title{How does climate change influence regional instability?}
+\title{Climate Change and Regional Fragility}
 \author{}
 \date{}
 \begin{document}
 	\begin{abstract}
-		In the present airport construction, the reliability and efficiency of security inspection are of vital significance, while the occurrence of congestion in checkpoints is undeniably frequent. This report aims to analyze the current process of airport security checkpoints and propose rational modifications.
+		How to define a country’s fragility? This might be a problem without accurate solution. However, we can focus on several specially appointed issues, for example, the fragility variation caused by climate change, which is a significant threat for most countries. In this paper, we are going to analyze several major factors that might have relationship with this special phenomenon.
 		
-		Firstly, we do the parameter analysis and process division based on the current situation and data. We assume that the flow of passengers obeys \textbf{PoissonDistribution}, and that the checking time obeys \textbf{Exponential Distribution}. According to the data given, we estimate related parameters using \textbf{Moment Estimation}, and obtain the quantitative model. Meanwhile, we perform the integral analysis of the system and figure out the relationship between the maximal flow of passengers and the proportion of ID-Check entrance number to screening lane number. After the simulation, we conclude that the bottleneck appears owing to screening lanes.
+		First, we establish a model without climate change to see the trend of a country’s fragility in a few years. This model must be clear, for which we use the logic of Principal Component Analysis and come up with some influence factors that occur in most countries. We assume the fragility to obey Markov Chain if there are no climate influences and external interventions. Then according to the specific problem been discussed, the model is modified with climate change and other detailed factors. Then we run our model on three countries which are respectively accepted as stable, vulnerable and fragile to settle the evaluation standard.
 		
-		Secondly, we propose two modifications to our model. According to the time consumed in different areas, we figure out the ideal proportion of the number of entrances and lanes so as to reach the highest throughput. Applying the M/M/S model in \textbf{Queuing Theory}, we obtain several \textbf{dynamic optimization} functions based on the principle of minimizing the fluctuation of the average waiting time. Considering both mentalities of passengers and construction costs of airports, we attain the final optimization. 
+		Second, we plan to run the model on a country at the edge of breakdown. Central African Republic ranks third on Fragile States Index database and is currently affected by climate change. We iterate our model to predict the fragility of Central African Republic in several years, and separately give random climate change and harmful climate change to see the trends.
 		
-		Thirdly, we do \textbf{sensitivity analysis} of the modified model. In previous analysis, we assume that passengers all obey rules and act normally, but due to discrepancies of cultural environment, passengers tend to behavior diversely, which could impact our model. Therefore, we mainly analyze three types of passengers and impacts of their behaviors on our model. Passengers who are queue-jumpers may cause disputes leading to the paralysis of specific entrances, and those who dress special may prolong the screening time. Furthermore, ones who hold obscure perception of contraband may be more prone to get additional screening.
+		Third, our attention is focused on a country which is rather stable: the Netherland. We refine our model with more specific climate change in this country, use Fixed Point Iteration to find the most severe climate change which is on the edge of pushing this country to more a fragile status. We can then obtain the climate change types that influence the Netherland most from the calculation. After this, we specify the policies their government can implements, and make more detailed modifications on our prediction model to calculate the efficiency of these policies. The government should make special efforts on the most effective policy.
 		
-		Finally, we propose policy and recommendations for security managers based on our optimal model. For instance, rearrange the number of entrances or lanes according to the current throughput, establish a baggage buffer at the end of X-ray belts, and promote Pre-Check.
-		
-		
+		Finally, we do the universality analysis of our model, finding that for smaller “states” and larger “states”, there should be some small modification as well. The core of this model remains  the same, so if we want to run this model on other situations, there should be some background study initially.		
 		
 		\begin{keywords}
-			Parameter Estimation; Queuing Theory; Dynamic Optimization; Maximal Throughput; Airport Security; Cultural Diversity
+			Climate change; Fragility analysis; Principal Component Analysis; Markov Chain; Fixed Point Iteration
 		\end{keywords}
 	\end{abstract}
 	\maketitle
+	
+
 	
 	\newpage
 	\begin{center}
@@ -214,17 +215,12 @@
 	\end{matrix}
 	\right)
 	$$
-	$CP$ is the influence , There may be doubts whether \textbf{military factor} will be affected. As a matter of fact, \textbf{military factor} will change, but not on the direct effect of climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
+	$P_{CP},P_{CE}$ and $P_{CS}$ are the influence of climate change on policy, economic and social factors. $X$ is external intervention, and here we assume it to be 0. There may be doubts whether \textbf{military factor} will be affected. As a matter of fact, \textbf{military factor} will change, but not on the direct effect of climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
 	
 	
 	\subsection{Estimation for some parameters}
-	Three effects of climate change (natural disasters, sea-level rise, and increasing resource scarcity) are frequently assumed to lead to loss of livelihood, economic decline, and increased insecurity either directly or through forced migration. Interacting with poor governance, societal inequalities, and a bad neighborhood, these factors in turn may promote
-	political and economic instability, social fragmentation, migration, and inappropriate responses from governments. Eventually this produces increased motivation for instigating violence as well as improved opportunities for mobilization.[2]
 	
-	Events related to climate may cause a huge influence on the society, since they will impact the provisionment, conditions of countries and communities, and acquisition of clean water and energy. For example, according to a report from the Climate Action Network of Australia, climate change may decrease the precipitation of prairies, which may lead to a $15\%$ decline in grass productivity. In turn, it could further result in a $12\%$ drop in average weight of cattle, which decreases the beef supply. Under such condition, milk yield of cattle will decline by $30\%$, and new pests will spread in the areas. Furthermore, such condition will cause a $10\%$ decline of drinking water. According to the model of upcoming changing conditions, in the next 15 - 30 years, such situation may happen in a number of grain production bases around the world, which will result in an enormous impact on the economy and society to a large extent. 
-	
-	In addition, A long line of research links hot temperatures to individual aggression, including violent crime and riots. The simple scarcity (neo-Malthusian) model of conflict assumes that if climate change results in a reduction in essential resources for livelihood, such as food or water, those affected by the increasing scarcity may start fighting over the remaining resources. Alternatively, people may be forced to leave the area and create new scarcities when they encroach on the territory of other people who may also be resource-constrained. Barnett and Adger (2007) review a broad range of studies of both of these effects, focusing particularly on countries where a large majority of the population is still dependent on employment in the primary sector. If climate change results in reduced rainfall and higher temperature that jointly causes droughts, and reduced access to the natural capital that sustains livelihoods, poverty will be more widespread and the potential for conflict greater.[2]
-	
+	We apply quantitative analysis on the influence of climate change (\textbf{Table 3}) and interplay of other factors (\textbf{Table 4}). The figures in each cell denote the number of studies that support, do not support, or contradict the proposed hypothesis. 
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
 		\footnotesize
@@ -293,9 +289,7 @@
 		\end{tabular}
 		\caption{Interplay of different factors - Quantitative study}\label{tab:Interplay of different factors - Quantitative study}
 	\end{table}
-	
-	We apply quantitative analysis on the influence of climate change (\textbf{Table 3}) and interplay of other factors (\textbf{Table 4}). The figures in each cell denote the number of studies that support, do not support, or contradict the proposed hypothesis. The total number of
-	reviewed studies per outcome is computed and will be used for the computation of parameters. To be more specific, for each cell we need to calculate an parameter that represents the influence of the row factor on the column factor. If there is a study that supports the relation, we increase the outcome by 1; if there is a study that is opposite to the relation, we decrease it by 1. Then we calculates the sum of each row, and consider the proportion of each cell in the sum as the parameter of that cell. 
+	The total number of reviewed studies per outcome is computed and will be used for the computation of parameters. To be more specific, for each cell we need to calculate an parameter that represents the influence of the row factor on the column factor. If there is a study that supports the relation, we increase the outcome by 1; if there is a study that is opposite to the relation, we decrease it by 1. Then we calculates the sum of each row, and consider the proportion of each cell in the sum as the parameter of that cell. 
 	
 	Finally ,we attain matrix $K$ and $K_c$ as follows
 	\begin{spacing}{1.5}
@@ -454,7 +448,7 @@
 	\end{table}
 	
 	
-	In the Fragile States Index data base, we can find some major factors for our model. After data conversion, we obtain the inputs for our prediction function (\textbf{Table 8})
+	In the Fragile States Index database, we can find some major factors for our model. After data conversion, we obtain the inputs for our prediction function (\textbf{Table 8})
 	
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
@@ -470,12 +464,12 @@
 		\caption{Factors of Central African Republic}\label{tab:Factors of Central African Republic}
 	\end{table}
 	
-	First, we want to determine how climate change may have increased fragility of Central African Republic, which is similar to what we have done in the last section. We assume the climate change to be a constant negative factor. The fragility of Central African Republic in 5 years is shown below
+	First, we want to determine how climate change may have increased fragility of Central African Republic, which is similar to what we have done in the last section. We assume the climate change to be a constant negative factor. The fragility of Central African Republic in 5 years is shown in \textbf{Figure 4}
 	
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=15cm]{figure5.jpg}
+		\includegraphics[width=12cm]{figure5.jpg}
 		\caption{Fragility-Year Graph of Central African Republic} \label{fig:Fragility-Year Central African Republic}
 	\end{figure}
 	
@@ -485,12 +479,12 @@
 	\subsection{Ways to mitigate fragility}
 	Then we try to find the fragility trend without climate change factor. Among the four factors we defined, policy factor is the only one that government can control, others can only be affected by the policy factor. So, we set climate factor to 0 and change policy factor, trying to find the value of policy factor when fragility won’t get worse in 5 years.
 	
-	Below is the fragility changing curve when policy factor is down to 9.37, the fragility will get better in 2 years then adjust itself to become as fragile as before, which indicate that in this kind of country, positive policy may not last long in current situation.
+	\textbf{Figure 5} is the fragility changing curve when policy factor is down to 9.37, the fragility will get better in 2 years then adjust itself to become as fragile as before, which indicate that in this kind of country, positive policy may not last long in current situation.
 	
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=15cm]{figure6.jpg}
+		\includegraphics[width=12cm]{figure6.jpg}
 		\caption{Fragility-Year of Graph Central African Republic} \label{fig:Fragility-Year Central African Republic}
 	\end{figure}
 	
@@ -549,7 +543,7 @@
 	$$
 	8.96D + 0.22E + 2.24L - 0.41M + 0.52P + 5.31R - 0.33S + 3.49T\leq0
 	$$
-	After assigning the data of the Netherlands in Fragile States Index data base, we can attain
+	After assigning the data of the Netherlands in Fragile States Index database, we can attain
 	$$
 	8.96D + 2.24L + 5.31R + 3.49T - 0.58\leq0
 	$$
@@ -575,12 +569,12 @@
 	\subsection{Refine the Model}
 	In this chapter, we continue to use the Netherlands as an example to build our model. Impact of major climate factors in the Netherlands, which are Anomalies in temperature ($T$), anomalies in rainfall ($R$), sea-level rise ($L$) and natural disasters ($D$) can all be remedied through specific policies. If the government investment in coping with climate change is not sufficient, climate change will cause an enormous influence on the fragility of the country; however, if government invest too much in it, economy of the country could be affected. We should find a tradeoff between cost of policies and impact of climate change. 
 	
-	According to four major climate factors, we mainly enumerate four policies, or driven interventions, to mitigate the risk of climate change. Interventions include artificial rainfall and building reservoirs ($P_w$), air conditioning subsidies ($P_a$), building dams ($P_d$), and monitoring and early warning of natural disasters ($P_m$).
+	According to four major climate factors, we mainly enumerate four policies, or driven interventions, to mitigate the risk of climate change. Interventions include artificial rainfall and building reservoirs ($P_w$), air conditioning subsidies ($P_a$), building dams ($P_d$), and monitoring and early warning of natural disasters ($P_m$). \textbf{Figure }
 	
 	\begin{figure}[h]
 		\small
 		\centering
-		\includegraphics[width=16cm]{figure8.png}
+		\includegraphics[width=15cm]{figure8.png}
 		\caption{Schema of refined model} \label{fig:Schema of refined model}
 	\end{figure}
 	
@@ -663,7 +657,7 @@
 	$$
 	Similar to the previous analysis, if the equation above is satisfied, the fragility of the state will not be increased, which means such interventions can prevent a country from becoming a fragile state.
 	
-	We use data of the Netherlands in 2017 from Fragile States Index data base to calculate, and obtain the following equation
+	We use data of the Netherlands in 2017 from Fragile States Index database to calculate, and obtain the following equation
 	$$
 	1.833D + 0.375L + 1.083R + 0.708T
 	$$
@@ -687,7 +681,7 @@
 	
 	Since different natural disasters requires different specialized monitoring and early warning system, the cost may be significantly different. Take earthquake as an example. According to the estimation from U.S. Geological Survey (USGS) in 2014, to build an earthquake early warning system covering the entire west coast of the United States, capital investment costs will reach 383,000,000\$ and annual maintenance and operational costs will be 161,000,000\$.
   
-	\section{Model Adaptation}
+	\section{Analysis on universality of the model}
 	\subsection{Smaller States}
 	In the previous chapters, our model argues that external interventions have far less impact on policy, military, economic and social factors than domestic interventions. However, when the scope of the model is narrowed down to the size of a city, we think that the impact of external interventions will increase substantially and can not be ignored in the calculation. For example, when the earthquake disaster in a city usually receives the attention and help from the whole country, for a small state, the economic, policy and military aid input from the outside world can make up for the losses caused by the earthquake.
 	
@@ -700,6 +694,29 @@
 	$$
 	F = \sqrt{\frac{\Sigma_{i=1}^n F_i^2}{n}}
 	$$
+	
+	\section{Strengths and weaknesses}
+	\begin{itemize}
+		\item \large{\textbf{Strengths}}
+		\begin{itemize}
+			\item Our model separates the whole process of the variation of countries’ fragility into last year’s influence, climate change influence and external interventions, and independently analyzes every part of the model, which avoid the possible errors due to the complicated model.
+			\item We use the logic of principal component analysis twice to divide the factors that affect the fragility of a country into five aspects: policy, economy, military, society and climate change. All the other factors will affect these five principal component factors. In addition, we divide the change of a country's climate into rainfall, temperature, sea level and natural disaster so as to make it clear and concise to evaluate the relationship between fragility of the country and the impact of climate change.
+			\item The variation of countries’ fragility in every year is a discrete Markov process, so we abstract the process into a Markov chain model that simulates the variation of countries’ fragility and contributes to analyzing the relationship between fragility of the country and the impact of climate change.		
+			\item In the specific analysis of the impacts of climate change on countries’ fragility, we select the Netherlands to do more comprehensive analysis. To be specific, we take the Netherlands's national conditions and geographical location, industrial structure, the relationship between the stability of the country and climate change in detail into consideration. Therefore, it has a good robustness.	
+		\end{itemize}
+
+		\item \large{\textbf{Weaknesses}}
+			\begin{itemize}
+				\item We use the Markov model to simulate the variation of countries’ fragility, which is not conducive to medium and long-term forecast of the system, so our model is not good at predicting the long-term trend of countries’ fragility.
+				\item Since there is a large difference between each country and it is complicated to analyze every country’s situation one by one, our model does not consider the impact on the fragility of the country due to the decisions of the national leaders, people's religious beliefs, and national culture and history.
+				\item Due to the complexity of analyzing the aid relationship and effort between countries, all external interventions were modeled as a constant before Task 5. However, the external intervention should be carefully evaluated if the model is applied into practice.
+			\end{itemize}
+	\end{itemize}
+
+	\section{Conclusion}
+		In this paper, we develop a model to determine a country's fragility and measure the impact of climate change. We extract four major factors, which are factors of policy, military, economy, and society, to quantitatively measure a state's degree of fragility. Such factors in a year will be determined by last year's factors and will be affected by climate change as well as external interventions, which is a modified Markov process. 
+		
+		After that, we run our model on a fragile country, Central African Republic, to show how climate change will impact the fragility of country and find that making correct policies is the approach to decrease its fragility. Furthermore, we run our model on a stable country, the Netherlands, and with the thought of PCA, we refine our model by separating climate change into four specific aspects:  anomalies in temperature, anomalies in rainfall, sea-level rise and natural disasters. We attain a equation between four climate factors and four major factors to decide whether a country may become fragile. In addition, we come up with four policies or driven interventions to mitigate the risk of climate and estimate their cost respectively. Finally, we further modify our model so as to adapt to smaller and larger states.
 	
 	\begin{thebibliography}{99}
 		\bibitem{1}\url{https://en.wikipedia.org/wiki/Fragile_state#Defining_fragile_states}
@@ -714,18 +731,6 @@
 	
 	\begin{appendices}
 		
-		\section{First appendix}
-		Here are data  about how passengers proceed through each step of the security screening process. \\
-
-		
-		
-		
-		
-		
-		
-		
-		
-		\section{Second appendix}
 		Here are simulation programmes we used in our model as follow.
 		\noindent \textbf{\textcolor[rgb]{0.98,0.00,0.00}{Draw the figure of $f_{omax}$ and $N_L/N_P$}}
 		\lstinputlisting[language=Matlab]{./code/find_CARequal5.m}

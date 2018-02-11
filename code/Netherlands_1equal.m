@@ -1,0 +1,20 @@
+Factors=[1; 1.5; 2.5; 3.15];
+syms Pw;
+syms Pa;
+syms Pd;
+syms Pm;
+K=[1/2 0 1/3 1/6; 0 2/3 1/6 1/6; 1/2 0 3/8 1/8; 1/4 1/4 1/4 1/4];
+Kc=[1/8 1/4 1/8 1/2; 0 1/4 0 3/4; 1/4 1/4 1/4 1/4; 1/3 1/3 0 1/3];
+Kp = [-1/3 -2/3 0 0; -1 0 0 0; 0 0 -1 0; -1/6 -1/6 -1/6 -1/2];
+Pc = [Pw; Pa; Pd; Pm];
+Kpc = [0 0 0 0; 0 0 0 0; 1 1 1 1; 0 0 0 0];
+syms T;
+syms R;
+syms L;
+syms D;
+C=[T; R; L; D];
+target=sum(Factors);
+Factors=K*Factors+Kc*(C+Kp*Pc)+Kpc*Pc;
+Result=sum(Factors)-target;
+Result=vpa(Result);
+%collect(Result, findsym(Result))

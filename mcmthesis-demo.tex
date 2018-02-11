@@ -27,16 +27,16 @@
 	\begin{abstract}
 		To define a country's \textbf{fragility}, we can focus on several specific issues. In this paper, we are going to analyze the relationship between climate change and regional fragility.
 		
-		First, we establish a model without climate change to see the trend of a country’s fragility in a few years. Using the logic of \textbf{Principal Component Analysis}, we come up with some influence factors that occur in most countries. We assume the fragility to obey \textbf{Markov Chain} if there are no climate influences and external interventions. Then we modify the model with climate change and other detailed factors. After that, we run our model on three countries which are respectively accepted as stable, vulnerable and fragile to set the evaluation standard.
+		First, we establish a model without climate change to see the trend of a country's fragility in a few years. Using the logic of \textbf{Principal Component Analysis}, we come up with some influence factors that occur in most countries. We assume the fragility to obey \textbf{Markov Chain} if there are no climate influences and external interventions. Then we modify the model with climate change and other detailed factors. After that, we run our model on three countries which are respectively accepted as stable, vulnerable and fragile to set the evaluation standard.
 		
-		Second, we plan to run the model on a country at the edge of breakdown. Central African Republic ranks third on Fragile States Index database and is currently affected by climate change. We iterate our model to predict the fragility of Central African Republic in several years, and separately give random climate change and harmful climate change to see the trends.
+		Second, we run the model on a country at the edge of breakdown. Central African Republic ranks third on Fragile States Index database and is currently affected by climate change. We iterate our model to predict the fragility of Central African Republic in several years, and separately give random climate change and harmful climate change to see the trends.
 		
-		Third, our attention is focused on a country which is rather stable: the Netherlands. We refine our model with more specific climate change in this country, use \textbf{Fixed Point Iteration} to find the tipping point, and obtain the climate change types that influence the Netherlands most from the calculation. After this, we specify the policies their government can implement, and make more detailed modifications on our prediction model to calculate the efficiency of these policies. The government should make special efforts on the most effective policy.
+		Third, our attention is focused on a country which is rather stable: the Netherlands. We refine our model with more specific climate change in this country, use \textbf{Fixed Point Iteration} to find the tipping point, and obtain the climate change types that influence the Netherlands most from calculation. After this, we specify the policies its government can implement, and make more detailed modifications on our prediction model to calculate the efficiency of these policies. The government should make special efforts on the most effective policy.
 		
-		Finally, we do the universality analysis of our model, finding that for smaller “states” and larger “states”, there should be some small modification as well. The core of this model remains the same, so if we want to run this model on other situations, there should be some background study initially.		
+		Finally, we do the universality analysis of our model, finding that for smaller “states” and larger “states”, there should be some small modifications as well. If we want to run this model on other situations, there should be some background study initially, but the core of this model remains the same.		
 		
 		\begin{keywords}
-			Climate change; Fragility analysis; Principal Component Analysis; Markov Chain; Fixed Point Iteration
+			Climate Change; Fragility Analysis; Principal Component Analysis; Markov Chain; Fixed Point Iteration
 		\end{keywords}
 	\end{abstract}
 	\maketitle
@@ -84,19 +84,19 @@
 		
 	\end{itemize}
 	
-	\section{A common model for most countries}
-	In this section, we draw a relationship schema of several vital factors to show the direct influences between them. Take economic policy as an example, it has a strong direct effect on GDP under most circumstances. And in the schema, we can also see the indirect influence since all the boxes are connected by arrow lines.
+	\section{A Common Model for Most Countries}
+	In this section, we draw a relationship schema of several vital factors to show the direct influences between them. Take economic policy as an example. It has a strong direct effect on GDP under most circumstances. And in the schema, we can also see the indirect influences since all the boxes are connected by arrow lines.
 	
-	After that, an evaluation function can be determined by weighting the factors’ contribution to fragility. Even more, we can also gain a recursion function to predict the country's fragility in a few years. Using these functions to evaluate current status of some typical countries, an evaluation standard then be settled.
+	After that, an evaluation function can be determined by weighting the factors' contribution to fragility. Even more, we can also gain a recursion function to predict the country's fragility in a few years. Using these functions to evaluate current status of some typical countries, we then set an evaluation standard.
 	
-	\subsection{Model establishing without climate change}
-	Based on the schema below (\textbf{Figure 1}), we focus on several factors that might have the most impact on a country's fragility. Policies issued by government, military activities, social problems and economic crisis are four major factors effecting fragility. These factors also have interconnections, which makes this model more realistic and manageable.
+	\subsection{Model Establishing Without Climate Change}
+	Based on the schema below (\textbf{Figure 1}), we focus on several factors that might have the largest impact on a country's fragility. Policies issued by government, military activities, social problems and economic crisis are four major factors effecting fragility. These factors also have interplay, which makes this model more realistic and manageable.
 	
 	\begin{figure}[h]
 		\small
 		\centering
 		\includegraphics[width=14cm]{figure2.png}
-		\caption{Stage-structured model of current process} \label{fig:Stage-structured model of current process}
+		\caption{Schema of major factors} \label{fig:Schema of major factors}
 	\end{figure}
 	
 	\noindent Additionally, the quantities involved in the function are shown in \textbf{Table 1} and \textbf{Table 2}. We list subscripts and primary notations apart.\\
@@ -147,7 +147,7 @@
 	
 	In the function, $w$ is the weight of the variables, which is $(w_1, w_2, w_3, w_4)$. Since in the subsequent paragraphs we will normalize $P_N, M_N, E_N, S_N$, and for conciseness of the formula, we could assign w to be 1 for each variable.
 	
-	As assumed, if climate and external intervention remains zero, our major factors should be a \textbf{Markov Model}, which is
+	As assumed, if climate change and external intervention remain zero, our major factors should be a \textbf{Markov Model}, which is
 	
 	$$
 	\left(
@@ -186,7 +186,7 @@
 	\right) 
 	$$
 	
-	\subsection{Modified Markov Model including climate change}
+	\subsection{Modified Markov Model Including Climate Change}
 	
 	We can find in the schema (\textbf{Figure 1}) that climate change has direct influence on \textbf{policy factor}, \textbf{economy factor} and \textbf{social factor}, which indicates that there are several modifications to make. Since only the \textbf{military factor} is not affected, the modified prediction function should be as follow
 	
@@ -215,12 +215,12 @@
 	\end{matrix}
 	\right)
 	$$
-	$P_{CP},P_{CE}$ and $P_{CS}$ are the influence of climate change on policy, economic and social factors. $X$ is external intervention, and here we assume it to be 0. There may be doubts whether \textbf{military factor} will be affected. As a matter of fact, \textbf{military factor} will change, but not on the direct effect of climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
+	$P_{CP},P_{CE}$ and $P_{CS}$ are the influence of climate change on policy, economic and social factors. $X$ is external intervention, and here we assume it to be 0. There may be doubts that whether \textbf{military factor} will be affected. As a matter of fact, \textbf{military factor} will change, but does not directly affected by climate change. The indirect influence from climate change will appear while running the modified prediction function. For example, catastrophe causes social instability, then the military level changes, which might take some time for strategic planning.
 	
 	
-	\subsection{Estimation for some parameters}
+	\subsection{Estimation for Some Parameters}
 	
-	We apply quantitative analysis on the influence of climate change (\textbf{Table 3}) and interplay of other factors (\textbf{Table 4}). The figures in each cell denote the number of studies that support, do not support, or contradict the proposed hypothesis. 
+	We apply quantitative analysis on the influence of climate change (\textbf{Table 3}) and interplay of other factors (\textbf{Table 4}). The figures in each cell denote the number of studies that support (support), do not support (none), or contradict the proposed hypothesis (opposite). 
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
 		\footnotesize
@@ -291,7 +291,7 @@
 	\end{table}
 	The total number of reviewed studies per outcome is computed and will be used for the computation of parameters. To be more specific, for each cell we need to calculate an parameter that represents the influence of the row factor on the column factor. If there is a study that supports the relation, we increase the outcome by 1; if there is a study that is opposite to the relation, we decrease it by 1. Then we calculates the sum of each row, and consider the proportion of each cell in the sum as the parameter of that cell. 
 	
-	Finally ,we attain matrix $K$ and $K_c$ as follows
+	Finally, we attain matrix $K$ and $K_c$ as follows
 	\begin{spacing}{1.5}
 		$$
 		K = 
@@ -344,7 +344,7 @@
 		\end{equation}
 	\end{spacing}	
 	
-	\subsection{Obtain fragility standard}
+	\subsection{Obtain Fragility Standard}
 	It makes no sense to draw up standards out of an imaginary country, so we choose to investigate several countries which are widely accepted as stable, vulnerable and fragile.
 	We respectively define Egypt, China and Italy to be fragile, vulnerable and stable, then we do research in Fragile States Index database[3] to calculate the policy factor, military factor, economy factor and social factor. Our factors are gained by 
 	\begin{spacing}{1.5}
@@ -421,9 +421,9 @@
 		\caption{Fragility-Year Graph with negative climate change} \label{fig:Fragility-Year with random climate change}
 	\end{figure}
 	
-	\section{Run model on the most fragile country}
-	\subsection{How climate change increase fragility}
-	In the section above, we have already build up our evaluation model of fragility. To test this model on some extreme situation, we first select one of the most fragile country: Central African Republic, which is on the edge of crashing. Its basic information are shown in \textbf{Table 7}
+	\section{Run Model on the Most Fragile Country}
+	\subsection{How Climate Change Increase Fragility}
+	In the section above, we have already built up our evaluation model of fragility. To test this model on some extreme situation, we first select one of the most fragile country: Central African Republic, which is on the edge of crashing. Its basic information are shown in \textbf{Table 7}
 
 	\begin{table}[htbp]
 		\renewcommand\arraystretch{1.5}
@@ -473,13 +473,13 @@
 		\caption{Fragility-Year Graph of Central African Republic} \label{fig:Fragility-Year Central African Republic}
 	\end{figure}
 	
-	It is apparent that if climate continue to be negative, a country will find it hard to adjust its policy, economy and society to reduce fragility. The fragility of Central African Republic is high enough in 2017, which can be even worse if climate remains harmful.
+	It is apparent that if climate continues to be negative, a country will find it hard to adjust its policy, economy and society to reduce fragility. The fragility of Central African Republic is high enough in 2017, which can be even worse if climate remains harmful.
 
 
-	\subsection{Ways to mitigate fragility}
-	Then we try to find the fragility trend without climate change factor. Among the four factors we defined, policy factor is the only one that government can control, others can only be affected by the policy factor. So, we set climate factor to 0 and change policy factor, trying to find the value of policy factor when fragility won’t get worse in 5 years.
+	\subsection{Ways to Mitigate Fragility}
+	Then we try to find the fragility trend without climate change factor. Among the four factors we defined, policy factor is the only one that government can control, others can only be affected by the policy factor. So, we set climate factor to 0 and change policy factor, trying to find the value of policy factor when fragility won't get worse in 5 years.
 	
-	\textbf{Figure 5} is the fragility changing curve when policy factor is down to 9.37, the fragility will get better in 2 years then adjust itself to become as fragile as before, which indicate that in this kind of country, positive policy may not last long in current situation.
+	\textbf{Figure 5} is the fragility changing curve when policy factor is down to 9.37. The fragility will get better in 2 years and then adjust itself to become as fragile as before, which indicates that in this kind of country, positive policy may not last long in current situation.
 	
 	\begin{figure}[h]
 		\small
@@ -488,10 +488,10 @@
 		\caption{Fragility-Year of Graph Central African Republic} \label{fig:Fragility-Year Central African Republic}
 	\end{figure}
 	
-	So, the conclusion can be drawn: If government can still make right, positive decisions on economic and social policies, then the fragility might not get higher. If this country wants to be less fragile, its government should be very capable and outstanding on making right decisions, which might not be the case in most fragile countries.
+	So, the conclusion can be drawn: if government can still make right, positive decisions on economic and social policies, the fragility might not get higher. If this country wants to be less fragile, its government should be very capable and outstanding on making right decisions, which might not be the case in most fragile countries.
 
-	\section{Run model on the stable country}
-	\subsection{Refine model with more specific climate change}
+	\section{Run Model on the Stable Country}
+	\subsection{Refine Model With More Specific Climate Change}
 	In this chapter, we choose countries with high stability for data analysis, since such countries have dramatic difference with countries involved in the previous discussion. Furthermore, the choice of country will affect our choice of climate parameters. For example, if we choose landlocked countries, the impact of sea-level rise should not be a major factor.
 	
 	Select a specific N as iteration time. Assume each climate factor is $C_i$, and the corresponding weight is $k_{c_i}$.  We iterate under the constraint condition that the fragility of a state does not increase ($F_0 = F_N$). Therefore, we have the following equation
@@ -538,7 +538,7 @@
 	$$
 	\end{spacing}
 
-	\subsection{Run model on the Netherlands}
+	\subsection{Run Model on the Netherlands}
 	We select $N = 5$ as iteration time, and attain the equation that could satisfy the constrain condition:
 	$$
 	8.96D + 0.22E + 2.24L - 0.41M + 0.52P + 5.31R - 0.33S + 3.49T\leq0
@@ -699,16 +699,16 @@
 	\begin{itemize}
 		\item \large{\textbf{Strengths}}
 		\begin{itemize}
-			\item Our model separates the whole process of the variation of countries’ fragility into last year’s influence, climate change influence and external interventions, and independently analyzes every part of the model, which avoid the possible errors due to the complicated model.
+			\item Our model separates the whole process of the variation of countries' fragility into last year's influence, climate change influence and external interventions, and independently analyzes every part of the model, which avoid the possible errors due to the complicated model.
 			\item We use the logic of principal component analysis twice to divide the factors that affect the fragility of a country into five aspects: policy, economy, military, society and climate change. All the other factors will affect these five principal component factors. In addition, we divide the change of a country's climate into rainfall, temperature, sea level and natural disaster so as to make it clear and concise to evaluate the relationship between fragility of the country and the impact of climate change.
-			\item The variation of countries’ fragility in every year is a discrete Markov process, so we abstract the process into a Markov chain model that simulates the variation of countries’ fragility and contributes to analyzing the relationship between fragility of the country and the impact of climate change.		
-			\item In the specific analysis of the impacts of climate change on countries’ fragility, we select the Netherlands to do more comprehensive analysis. To be specific, we take the Netherlands's national conditions and geographical location, industrial structure, the relationship between the stability of the country and climate change in detail into consideration. Therefore, it has a good robustness.	
+			\item The variation of countries' fragility in every year is a discrete Markov process, so we abstract the process into a Markov chain model that simulates the variation of countries' fragility and contributes to analyzing the relationship between fragility of the country and the impact of climate change.		
+			\item In the specific analysis of the impacts of climate change on countries' fragility, we select the Netherlands to do more comprehensive analysis. To be specific, we take the Netherlands's national conditions and geographical location, industrial structure, the relationship between the stability of the country and climate change in detail into consideration. Therefore, it has a good robustness.	
 		\end{itemize}
 
 		\item \large{\textbf{Weaknesses}}
 			\begin{itemize}
-				\item We use the Markov model to simulate the variation of countries’ fragility, which is not conducive to medium and long-term forecast of the system, so our model is not good at predicting the long-term trend of countries’ fragility.
-				\item Since there is a large difference between each country and it is complicated to analyze every country’s situation one by one, our model does not consider the impact on the fragility of the country due to the decisions of the national leaders, people's religious beliefs, and national culture and history.
+				\item We use the Markov model to simulate the variation of countries' fragility, which is not conducive to medium and long-term forecast of the system, so our model is not good at predicting the long-term trend of countries' fragility.
+				\item Since there is a large difference between each country and it is complicated to analyze every country's situation one by one, our model does not consider the impact on the fragility of the country due to the decisions of the national leaders, people's religious beliefs, and national culture and history.
 				\item Due to the complexity of analyzing the aid relationship and effort between countries, all external interventions were modeled as a constant before Task 5. However, the external intervention should be carefully evaluated if the model is applied into practice.
 			\end{itemize}
 	\end{itemize}
@@ -718,8 +718,7 @@
 		
 		After that, we run our model on a fragile country, Central African Republic, to show how climate change will impact the fragility of country and find that making correct policies is the approach to decrease its fragility. Furthermore, we run our model on a stable country, the Netherlands, and with the thought of PCA, we refine our model by separating climate change into four specific aspects:  anomalies in temperature, anomalies in rainfall, sea-level rise and natural disasters. We attain a equation between four climate factors and four major factors to decide whether a country may become fragile. In addition, we come up with four policies or driven interventions to mitigate the risk of climate and estimate their cost respectively. Finally, we further modify our model so as to adapt to smaller and larger states.
 		
-		\newpage
-	
+	\newpage
 	\begin{thebibliography}{99}
 		\bibitem{1}\url{https://en.wikipedia.org/wiki/Fragile_state#Defining_fragile_states}
 		\bibitem{2} Schwartz, P. and Randall, D. “An Abrupt Climate Change Scenario and Its Implications for United States National Security”, October 2003.

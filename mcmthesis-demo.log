@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.30)  12 FEB 2018 21:02
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.30)  12 FEB 2018 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -957,18 +957,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [18]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[19]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 725.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 724.
  (c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 724--725
 [][]$\T1/pcr/m/n/12 https : / / en . wikipedia . org / wiki / Fragile _ state #
  Defining _
  []
@@ -980,31 +973,30 @@ Missing character: There is no – in font pplr8t!
 Missing character: There is no ” in font pplr8t!
 Missing character: There is no “ in font pplr8t!
 Missing character: There is no ” in font pplr8t!
-(./code/find_CARequal5.m
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19] (./code/find_CARequal5.m
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 7.
-) (./code/cal_PMES.m
+) (./code/cal_PMES.m) (./code/CAR.m
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20]) (./code/CAR.m
+[20]) (./code/climate.m
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[21]) (./code/climate.m)
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[22] (./code/Draw4d.m
+[21]) (./code/Draw4d.m
 Overfull \hbox (1.944pt too wide) in paragraph at lines 10--11
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][] 
@@ -1023,6 +1015,12 @@ Overfull \hbox (1.944pt too wide) in paragraph at lines 12--13
  []
 
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22]
 Overfull \hbox (25.94424pt too wide) in paragraph at lines 28--29
 [][][][][][][][][] 
  []
@@ -1069,12 +1067,6 @@ Overfull \hbox (1.944pt too wide) in paragraph at lines 51--52
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[23]
 Overfull \hbox (25.94424pt too wide) in paragraph at lines 70--71
 [][][][][][][][][] 
  []
@@ -1097,22 +1089,28 @@ Overfull \hbox (1.944pt too wide) in paragraph at lines 74--75
 ][][][][][][][][][][][][] 
  []
 
-) (./code/CAR_5equal.m
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]) (./code/Netherlands_1equal.m) (./code/Netherlands_1equal_PMES.m)
-(./code/Netherlands_5equal.m
+[23]) (./code/CAR_5equal.m) (./code/Netherlands_1equal.m)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25]) (./code/Netherlands_5equal_PMES.m) 
+[24] (./code/Netherlands_1equal_PMES.m) (./code/Netherlands_5equal.m)
+(./code/Netherlands_5equal_PMES.m
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]) 
 AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1134,10 +1132,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14641 strings out of 493005
  201159 string characters out of 6137956
- 399519 words of memory out of 5000000
+ 398752 words of memory out of 5000000
  18289 multiletter control sequences out of 15000+600000
  34611 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 41i,14n,75p,894b,1823s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,14n,75p,894b,1821s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on mcmthesis-demo.pdf (27 pages).

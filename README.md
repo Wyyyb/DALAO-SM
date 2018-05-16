@@ -1,12 +1,12 @@
 # ICM 2018
 
-The repository is a soluiton for Problem E of MCM/ICM 2018.
+The repository is our soluiton as a team for Problem E of MCM/ICM 2018.
 
 # Author
 
-Hao YU
-Songyun GU
-Yubo WANG
+* Hao YU
+* Songyun GU
+* Yubo WANG
 
 ## Installation
 

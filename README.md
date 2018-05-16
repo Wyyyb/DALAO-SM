@@ -1,9 +1,12 @@
-# The `mcmthesis` Class
+# ICM 2018
 
-This class is designed for the MCM/ICM.
+The repository is a soluiton for Problem E of MCM/ICM 2018.
 
-This work is released under the [LaTeX Project Public
-License](http://www.latex-project.org/lppl.txt), v1.3c or later.
+# Author
+
+Hao YU
+Songyun GU
+Yubo WANG
 
 ## Installation
 
@@ -28,7 +31,7 @@ To install this class, you should
     move other files     to `TEXMF/doc/latex/mcmthesis/` and then
     run `texhash`.
 
-## Author
+## Author of Template
 
 [Zhaoli Wang][zhaoli]
 
@@ -37,10 +40,6 @@ Email: 343083553@qq.com
 [Liam Huang][liam-ctan]
 
 Email: liamhuang0205+mcmthesis@gmail.com
-
-## Project Page
-
-If you are interested in the process of development you may observe
 
 <https://github.com/Liam0205/mcmthesis>
 

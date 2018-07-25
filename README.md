@@ -8,7 +8,7 @@ The repository is our soluiton as a team for Problem E of MCM/ICM 2018.
 * Songyun GU
 * Yubo WANG
 
-## Installation
+## Directory
 
 This work consists of the file mcmthesis.dtx,
                                figures/, and
@@ -33,13 +33,9 @@ To install this class, you should
 
 ## Author of Template
 
-[Zhaoli Wang][zhaoli]
+[Zhaoli Wang][zhaoli] Email: 343083553@qq.com
 
-Email: 343083553@qq.com
-
-[Liam Huang][liam-ctan]
-
-Email: liamhuang0205+mcmthesis@gmail.com
+[Liam Huang][liam-ctan] Email: liamhuang0205+mcmthesis@gmail.com
 
 <https://github.com/Liam0205/mcmthesis>
 
